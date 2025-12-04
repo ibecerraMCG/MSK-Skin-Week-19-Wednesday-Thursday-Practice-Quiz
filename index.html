@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 19 Practice Quiz</title>
+    <style>
+        /* --- CSS Variables & Themes --- */
+        :root {
+            /* Base Transition */
+            --transition-speed: 0.3s;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* 1. Modern Dark (Default) */
+        [data-theme="dark"] {
+            --bg-body: #1e293b;
+            --bg-card: #334155;
+            --bg-header: #0f172a;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-accent: #38bdf8;
+            --border-color: #475569;
+            --highlight-bg: #475569;
+            --button-bg: #38bdf8;
+            --button-text: #0f172a;
+            --button-hover: #0ea5e9;
+            --feedback-success-bg: #064e3b;
+            --feedback-success-border: #059669;
+            --feedback-success-text: #a7f3d0;
+            --feedback-error-bg: #7f1d1d;
+            --feedback-error-border: #dc2626;
+            --feedback-error-text: #fecaca;
+        }
+
+        /* 2. Modern Light */
+        [data-theme="light"] {
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --bg-header: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --text-accent: #2563eb;
+            --border-color: #e5e7eb;
+            --highlight-bg: #f3f4f6;
+            --button-bg: #2563eb;
+            --button-text: #ffffff;
+            --button-hover: #1d4ed8;
+            --feedback-success-bg: #ecfdf5;
+            --feedback-success-border: #34d399;
+            --feedback-success-text: #065f46;
+            --feedback-error-bg: #fef2f2;
+            --feedback-error-border: #f87171;
+            --feedback-error-text: #991b1b;
+        }
+
+        /* 3. Midnight (Pure Black) */
+        [data-theme="midnight"] {
+            --bg-body: #000000;
+            --bg-card: #000000;
+            --bg-header: #000000;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --text-accent: #90caf9;
+            --border-color: #333333;
+            --highlight-bg: #1a1a1a;
+            --button-bg: #90caf9;
+            --button-text: #000000;
+            --button-hover: #42a5f5;
+            --feedback-success-bg: #051b11;
+            --feedback-success-border: #0f5132;
+            --feedback-success-text: #75b798;
+            --feedback-error-bg: #2c0b0e;
+            --feedback-error-border: #842029;
+            --feedback-error-text: #ea868f;
+        }
+
+        /* 4. Legacy Dark (Original) */
+        [data-theme="legacy-dark"] {
+            --bg-body: #2d343e;
+            --bg-card: #3c424f;
+            --bg-header: #3c424f;
+            --text-main: #e8e6e3;
+            --text-muted: #b0c4de;
+            --text-accent: #8ab4f8;
+            --border-color: #555;
+            --highlight-bg: #454c5a;
+            --button-bg: #8ab4f8;
+            --button-text: #202124;
+            --button-hover: #a3c5f9;
+            --feedback-success-bg: #344e41;
+            --feedback-success-border: #52b788;
+            --feedback-success-text: #c7f9cc;
+            --feedback-error-bg: #5e2129;
+            --feedback-error-border: #a4133c;
+            --feedback-error-text: #f8d7da;
+        }
+
+        /* 5. Sepia (Reading Mode) */
+        [data-theme="sepia"] {
+            --bg-body: #f4ecd8;
+            --bg-card: #fdf6e3;
+            --bg-header: #e4d5b7;
+            --text-main: #433422;
+            --text-muted: #7c6f5a;
+            --text-accent: #a05a2c;
+            --border-color: #d3c4a5;
+            --highlight-bg: #ebe1c9;
+            --button-bg: #a05a2c;
+            --button-text: #fdf6e3;
+            --button-hover: #864822;
+            --feedback-success-bg: #e6f4ea;
+            --feedback-success-border: #8ab893;
+            --feedback-success-text: #2e4c35;
+            --feedback-error-bg: #f9e3e3;
+            --feedback-error-border: #d48f8f;
+            --feedback-error-text: #5c2b2b;
+        }
+
+        /* 6. High Contrast */
+        [data-theme="contrast"] {
+            --bg-body: #000000;
+            --bg-card: #000000;
+            --bg-header: #000000;
+            --text-main: #ffffff;
+            --text-muted: #dddddd;
+            --text-accent: #ffff00;
+            --border-color: #ffffff;
+            --highlight-bg: #333333;
+            --button-bg: #ffff00;
+            --button-text: #000000;
+            --button-hover: #e6e600;
+            --feedback-success-bg: #000000;
+            --feedback-success-border: #00ff00;
+            --feedback-success-text: #00ff00;
+            --feedback-error-bg: #000000;
+            --feedback-error-border: #ff0000;
+            --feedback-error-text: #ff0000;
+        }
+
+        /* --- Global Reset & Layout --- */
+        * { box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            line-height: 1.6;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--bg-header);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Default to Sticky */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Class to remove sticky behavior */
+        header.unpinned {
+            position: relative;
+            box-shadow: none;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            margin: 0;
+            color: var(--text-accent);
+        }
+
+        .controls-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pin-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .pin-btn:hover {
+            background-color: var(--highlight-bg);
+        }
+
+        .pin-btn.pin-active {
+            color: var(--text-accent);
+            border-color: var(--text-accent);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        select#theme-select {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 0 1rem 4rem 1rem;
+        }
+
+        .section-header {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--text-accent);
+            color: var(--text-accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* --- Question Card --- */
+        .question-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .lo-box {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--text-accent);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .question-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Options --- */
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .option-label:hover {
+            background-color: var(--highlight-bg);
+            border-color: var(--text-muted);
+        }
+
+        .option-label input {
+            margin-top: 0.3rem;
+            margin-right: 1rem;
+            accent-color: var(--text-accent);
+            transform: scale(1.2);
+        }
+
+        /* --- Buttons --- */
+        .btn-check {
+            margin-top: 1.5rem;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-check:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Feedback Area --- */
+        .feedback {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: none; /* Hidden by default */
+            border: 1px solid transparent;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feedback.correct {
+            background-color: var(--feedback-success-bg);
+            border-color: var(--feedback-success-border);
+            color: var(--feedback-success-text);
+        }
+
+        .feedback.incorrect {
+            background-color: var(--feedback-error-bg);
+            border-color: var(--feedback-error-border);
+            color: var(--feedback-error-text);
+        }
+
+        .feedback-header {
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .rationale {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .source {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-style: italic;
+            border-top: 1px dashed currentColor;
+            padding-top: 0.5rem;
+        }
+
+        /* --- Mobile Tweaks --- */
+        @media (max-width: 600px) {
+            header { padding: 1rem; flex-direction: column; gap: 10px; align-items: flex-start; }
+            .controls-wrapper { width: 100%; justify-content: space-between; }
+            .question-card { padding: 1.5rem; }
+            header h1 { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>Week 19 Practice Quiz</h1>
+        <div class="controls-wrapper">
+            <!-- Pin Button -->
+            <button class="pin-btn pin-active" id="pin-btn" onclick="toggleHeader()" title="Pin/Unpin Header">
+                📌
+            </button>
+            
+            <div class="theme-control">
+                <label for="theme-select">Theme:</label>
+                <select id="theme-select" onchange="changeTheme(this.value)">
+                    <option value="dark">Modern Dark</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="light">Modern Light</option>
+                    <option value="legacy-dark">Legacy Dark</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="contrast">High Contrast</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="quiz-root">
+        <!-- Content injected via JS -->
+    </div>
+
+    <script>
+        // --- Data ---
+        const quizData = [
+            // --- Musculoskeletal Development ---
+            {
+                section: "Musculoskeletal Development",
+                maskedLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on [various limb deformities]. (Musculoskeletal Development)",
+                fullLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on brachydactyly, clubfoot, and developmental dysplasia of the hip. (Musculoskeletal Development)",
+                question: "A female neonate is born via vaginal delivery in the breech position. Physical examination reveals that the left foot is rigid and cannot be passively corrected to a neutral position. The foot is fixed in plantarflexion and inversion, with the forefoot adducted. Which of the following anatomic descriptions best characterizes the position of the tarsal bones in this patient?",
+                options: {
+                    A: "Talus medially deviated; Calcaneus valgus",
+                    B: "Talus laterally deviated; Calcaneus varus",
+                    C: "Talus medially deviated; Calcaneus varus",
+                    D: "Talus laterally deviated; Calcaneus valgus",
+                    E: "Talus neutral; Calcaneus valgus"
+                },
+                correctAnswer: "C",
+                rationale: "The clinical presentation is consistent with congenital clubfoot (talipes equinovarus). The tarsal bones are in a fixed position of maximal flexion and adduction. Specifically, the talus is medially deviated and plantarflexed, while the calcaneus is in varus and rotated medially around the talus.",
+                source: "Musculoskeletal Development, Slide 29: \"Talus = medially deviated and plantarflexed... Calcaneus = varus and rotated medially around talus.\""
+            },
+            {
+                section: "Musculoskeletal Development",
+                maskedLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on [various limb deformities]. (Musculoskeletal Development)",
+                fullLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on brachydactyly, clubfoot, and developmental dysplasia of the hip. (Musculoskeletal Development)",
+                question: "A 1-year-old boy is evaluated for short fingers. Physical examination shows shortening of the digits on both hands. Radiographs reveal abnormal development of the phalanges. A disruption in the signaling pathways controlling limb elongation and digit patterning is suspected. This condition is most accurately described as which of the following?",
+                options: {
+                    A: "Syndactyly",
+                    B: "Polydactyly",
+                    C: "Brachydactyly",
+                    D: "Amelia",
+                    E: "Meromelia"
+                },
+                correctAnswer: "C",
+                rationale: "Brachydactyly is defined as the shortening or absence of digits due to abnormal development of the phalanges, metacarpals, or metatarsals. It results from a disruption of signaling pathways that control limb elongation, digit patterning, and bone development.",
+                source: "Musculoskeletal Development, Slide 24: \"Brachydactyly... Shortening or absence of digits due to abnormal development of phalanges, metacarpals/metatarsals, or both.\""
+            },
+            {
+                section: "Musculoskeletal Development",
+                maskedLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and [cervical anomalies]. (Musculoskeletal Development)",
+                fullLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and cervical ribs. (Musculoskeletal Development)",
+                question: "During the 4th week of development, cells from the sclerotome migrate to form the vertebral column. A developmental biologist is observing the process by which the caudal half of each sclerotome grows into and fuses with the cephalic half of the adjacent sclerotome. This specific process, which is essential for the formation of vertebral bodies, is best known as:",
+                options: {
+                    A: "Lateral folding",
+                    B: "Gastrulation",
+                    C: "Resegmentation",
+                    D: "Chondrification",
+                    E: "Neurulation"
+                },
+                correctAnswer: "C",
+                rationale: "Vertebrae are formed by resegmentation, where the caudal half of each sclerotome fuses with the cephalic half of the adjacent sclerotome. This allows the myotomes to bridge the intervertebral discs, facilitating movement of the vertebral column.",
+                source: "Musculoskeletal Development, Slide 13: \"Resegmentation... Caudal half of each sclerotome grows into and fuses with cephalic half of each adjacent sclerotome.\""
+            },
+            {
+                section: "Musculoskeletal Development",
+                maskedLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and [cervical anomalies]. (Musculoskeletal Development)",
+                fullLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and cervical ribs. (Musculoskeletal Development)",
+                question: "A 35-year-old woman presents with numbness and tingling in her right hand and forearm. A chest radiograph reveals an accessory bony structure attached to the C7 vertebra. The embryologic structure responsible for forming this anomaly typically differentiates into which of the following tissues?",
+                options: {
+                    A: "Dermis of the back",
+                    B: "Skeletal muscle of the limb",
+                    C: "Vertebrae and ribs",
+                    D: "Epidermis",
+                    E: "Visceral layer of lateral plate mesoderm"
+                },
+                correctAnswer: "C",
+                rationale: "The patient has a cervical rib, which is derived from the sclerotome of the somites (paraxial mesoderm). The sclerotome differentiates into the vertebrae and ribs.",
+                source: "Musculoskeletal Development, Slide 15: \"Each rib is also derived from sclerotome cells.\""
+            },
+            {
+                section: "Musculoskeletal Development",
+                maskedLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
+                fullLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
+                question: "A newborn is found to have an extra digit on the ulnar side of the hand. Genetic analysis reveals an abnormality in the expression of a specific protein within the zone of polarizing activity (ZPA). Which of the following proteins is most likely responsible for the anteroposterior patterning and digit formation in this patient?",
+                options: {
+                    A: "Fibroblast growth factor (FGF)",
+                    B: "Sonic hedgehog (SHH)",
+                    C: "Wnt-7a",
+                    D: "Bone morphogenetic protein (BMP)",
+                    E: "Retinoic acid"
+                },
+                correctAnswer: "B",
+                rationale: "The zone of polarizing activity (ZPA) is located at the posterior edge of the apical ectodermal ridge (AER). It secretes sonic hedgehog (SHH) protein, which contributes to the anteroposterior axis and digit formation (e.g., thumb on radial side, pinky on ulnar side). Abnormal expression can lead to polydactyly.",
+                source: "Musculoskeletal Development, Slide 20: \"Zone of polarizing activity (ZPA)... Secretes sonic hedgehog (SHH) protein... Contributes to anteroposterior axis and digit formation.\""
+            },
+            {
+                section: "Musculoskeletal Development",
+                maskedLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
+                fullLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
+                question: "During limb development, a specific structure at the distal border of the limb bud induces the proliferation of the underlying mesenchyme, driving limb elongation from proximal to distal. If this thickened outer edge of ectoderm is damaged, limb outgrowth may be arrested. Which structure is being described?",
+                options: {
+                    A: "Zone of polarizing activity (ZPA)",
+                    B: "Apical ectodermal ridge (AER)",
+                    C: "Neural crest",
+                    D: "Notochord",
+                    E: "Sclerotome"
+                },
+                correctAnswer: "B",
+                rationale: "The AER is the thickened outer edge of ectoderm at the distal border of the limb. It induces proliferation of the mesenchyme and is responsible for the elongation of the limb bud from proximal to distal.",
+                source: "Musculoskeletal Development, Slide 20: \"Apical ectodermal ridge (AER)... Thickened, outer edge of ectoderm... Induces proliferation of mesenchyme and elongation of limb bud proximal to distal.\""
+            },
+
+            // --- Lower Extremity Imaging ---
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "A trauma surgeon is evaluating a patient with a stab wound to the upper medial thigh. The surgeon needs to identify the borders of the femoral triangle to assess for potential vascular injury. Which of the following muscles forms the lateral border of this anatomical space?",
+                options: {
+                    A: "Adductor longus",
+                    B: "Gracilis",
+                    C: "Sartorius",
+                    D: "Pectineus",
+                    E: "Rectus femoris"
+                },
+                correctAnswer: "C",
+                rationale: "The borders of the femoral triangle are the Sartorius (lateral), Adductor Longus (medial), and the Inguinal Ligament (superior).",
+                source: "Lower Extremity Imaging Session, Slide 5: \"Borders of the Femoral Triangle... Lateral: Sartorius.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "A radiologist is reviewing a cross-sectional CT image of the mid-thigh. She identifies a muscle group located in the medial compartment of the thigh responsible for hip adduction. Which of the following muscles is located within this compartment?",
+                options: {
+                    A: "Rectus femoris",
+                    B: "Gracilis",
+                    C: "Biceps femoris",
+                    D: "Vastus lateralis",
+                    E: "Semitendinosus"
+                },
+                correctAnswer: "B",
+                rationale: "The medial compartment of the thigh contains the adductor muscles, including the Gracilis, Adductor longus, Adductor brevis, and Adductor magnus. The Rectus femoris is in the anterior compartment, and the Biceps femoris and Semitendinosus are in the posterior compartment.",
+                source: "Lower Extremity Imaging Session, Slide 7: \"Medial Compartment... 1. Gracilis.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "A physician is performing a point-of-care ultrasound of the popliteal fossa to evaluate for a deep vein thrombosis. When visualizing the neurovascular structures in the popliteal fossa, which of the following relationships is correct regarding the position of the popliteal vein relative to the popliteal artery?",
+                options: {
+                    A: "The popliteal vein is deep to the popliteal artery.",
+                    B: "The popliteal vein is superficial (posterior) to the popliteal artery.",
+                    C: "The popliteal vein is medial to the popliteal artery.",
+                    D: "The popliteal vein is not located in the popliteal fossa.",
+                    E: "The popliteal vein is lateral to the nerve but deep to the artery."
+                },
+                correctAnswer: "B",
+                rationale: "In the popliteal fossa, the popliteal vein (PV) is located superficial (posterior) to the popliteal artery (PA). Ultrasound images demonstrate the PV sitting on top of the PA (closer to the probe).",
+                source: "Lower Extremity Imaging Session, Slide 17: \"Ultrasound Basics... Right Leg – Popliteal Fossa... [Image labels PV superficial to PA].\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "A student is identifying muscles on a cross-sectional MRI of the thigh. They identify a muscle in the posterior compartment that has two heads (long and short). Which muscle is this?",
+                options: {
+                    A: "Semimembranosus",
+                    B: "Semitendinosus",
+                    C: "Biceps femoris",
+                    D: "Adductor magnus",
+                    E: "Gracilis"
+                },
+                correctAnswer: "C",
+                rationale: "The posterior compartment of the thigh contains the hamstring muscles. The Biceps femoris is the only muscle in this compartment listed as having a long head and a short head.",
+                source: "Lower Extremity Imaging Session, Slide 7: \"Posterior Compartment... 1. Biceps femoris... Long head... Short head.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "A cross-sectional image of the lower leg reveals the posterior compartment. The radiologist notes the superficial sub-compartment containing the gastrocnemius. Which other muscle is located in this superficial posterior compartment?",
+                options: {
+                    A: "Tibialis posterior",
+                    B: "Flexor hallucis longus",
+                    C: "Soleus",
+                    D: "Flexor digitorum longus",
+                    E: "Popliteus"
+                },
+                correctAnswer: "C",
+                rationale: "The posterior compartment of the leg is divided into superficial and deep layers. The superficial layer contains the Gastrocnemius, Soleus, and Plantaris. The deep layer contains the Tibialis posterior, Flexor hallucis longus, Flexor digitorum longus, and Popliteus.",
+                source: "Lower Extremity Imaging Session, Slide 9: \"Posterior Compartment... Superficial... 1. Gastrocnemius, 2. Soleus, 3. Plantaris.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "On a CT angiogram of the lower extremity, a vessel is traced branching from the popliteal artery and traveling into the posterior compartment of the leg. This vessel eventually gives rise to the fibular artery. Which artery is being described?",
+                options: {
+                    A: "Anterior tibial artery",
+                    B: "Posterior tibial artery",
+                    C: "Dorsalis pedis artery",
+                    D: "Deep femoral artery",
+                    E: "Lateral circumflex femoral artery"
+                },
+                correctAnswer: "B",
+                rationale: "The popliteal artery branches into the anterior tibial artery and the posterior tibial artery. The posterior tibial artery then gives rise to the fibular artery.",
+                source: "Lower Extremity Imaging Session, Slide 10: \"3. Posterior tibial a. ... Fibular a.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "A patient presents with foot drop. A cross-sectional MRI of the leg is reviewed to assess the muscles of the anterior compartment. Which of the following muscles is located within the anterior compartment of the leg?",
+                options: {
+                    A: "Fibularis longus",
+                    B: "Tibialis anterior",
+                    C: "Soleus",
+                    D: "Tibialis posterior",
+                    E: "Flexor hallucis longus"
+                },
+                correctAnswer: "B",
+                rationale: "The anterior compartment of the leg contains the Tibialis anterior, Extensor digitorum longus, and Extensor hallucis longus. The Fibularis longus is in the lateral compartment.",
+                source: "Lower Extremity Imaging Session, Slide 9: \"Anterior Compartment... 1. Tibialis anterior.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                fullLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
+                question: "An anterior view radiograph of the knee is being evaluated. The physician identifies a bony prominence on the lateral aspect of the distal femur, superior to the lateral condyle. What is this structure?",
+                options: {
+                    A: "Medial epicondyle",
+                    B: "Adductor tubercle",
+                    C: "Lateral epicondyle",
+                    D: "Gerdy's tubercle",
+                    E: "Fibular head"
+                },
+                correctAnswer: "C",
+                rationale: "The lateral epicondyle is the bony prominence on the distal femur located lateral and superior to the lateral condyle.",
+                source: "Lower Extremity Imaging Session, Slide 4: \"Anterior view... Lateral epicondyle [labeled on diagram].\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
+                fullLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
+                question: "A 50-year-old male presents with unilateral leg swelling. A compression ultrasound is performed on the common femoral vein (CFV). The images show no change in the caliber of the CFV when compression is applied. What is the most likely diagnosis?",
+                options: {
+                    A: "Normal venous anatomy",
+                    B: "Deep Vein Thrombosis (DVT)",
+                    C: "Arterial occlusion",
+                    D: "Venous insufficiency without thrombosis",
+                    E: "Lymphatic obstruction"
+                },
+                correctAnswer: "B",
+                rationale: "A positive ultrasound finding for DVT is characterized by non-compressibility of the vein. If there is no or minimal change in the femoral vein caliber with compression, it indicates the presence of a thrombus preventing the walls from collapsing.",
+                source: "Lower Extremity Imaging Session, Slide 18: \"Positive DVT US... No/minimal change in Femoral Vein Caliber with compression.\""
+            },
+            {
+                section: "Lower Extremity Imaging",
+                maskedLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
+                fullLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
+                question: "A 75-year-old male with a history of diabetes mellitus presents with fever, left leg pain, and swelling. A CT scan of the left thigh reveals subcutaneous gas within the soft tissues. What is the most likely diagnosis?",
+                options: {
+                    A: "Deep Vein Thrombosis",
+                    B: "Cellulitis",
+                    C: "Necrotizing soft tissue infection (e.g., Fournier's gangrene/Necrotizing fasciitis)",
+                    D: "Femur fracture",
+                    E: "Lymphedema"
+                },
+                correctAnswer: "C",
+                rationale: "The presence of gas in the soft tissues on CT, combined with fever and pain in a diabetic patient, is highly suggestive of a severe necrotizing soft tissue infection (such as Fournier's gangrene or necrotizing fasciitis).",
+                source: "Lower Extremity Imaging Session, Slide 46: \"[Image showing gas in tissues]... FOURNIERS [labeled on slide].\" (Slide 44 vignette: 75 yo M, hx DM w/ fever and L leg pain and swelling)."
+            },
+
+            // --- Common Childhood Musculoskeletal Conditions ---
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A primary care physician is attending a seminar on pediatric orthopedics. The lecturer emphasizes that while most pediatric musculoskeletal conditions are benign, certain presentations require urgent referral. Which of the following clinical presentations is considered a \"red flag\" in a child with back pain/scoliosis?",
+                options: {
+                    A: "Right thoracic curve pattern",
+                    B: "Trunk asymmetry noted by parents",
+                    C: "Absence of neurological complaints",
+                    D: "Pain as the presenting complaint",
+                    E: "Diagnosis made during adolescence"
+                },
+                correctAnswer: "D",
+                rationale: "While mild pain may be present in idiopathic scoliosis, pain as the presenting complaint is considered a red flag that warrants further investigation to rule out pathology such as tumors or infection.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 28: \"Pain as presenting complaint: red flag.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 12-year-old boy presents with a limp and knee pain. Physical examination of the knee is unremarkable with full range of motion and no tenderness. However, examination of the hip reveals decreased internal rotation. Why is it critical to evaluate the hip in a child presenting with knee pain?",
+                options: {
+                    A: "Knee pain is always psychogenic in children.",
+                    B: "Hip pathology, such as SCFE, can present as referred pain to the knee.",
+                    C: "Knee pain usually indicates Osgood-Schlatter disease.",
+                    D: "Hip range of motion is unrelated to knee pathology.",
+                    E: "The knee and hip share the same joint capsule."
+                },
+                correctAnswer: "B",
+                rationale: "Slipped Capital Femoral Epiphysis (SCFE) typically presents with pain in the groin, thigh, or knee. If the chief complaint is knee pain, there may be a paradoxical absence of knee findings, while the pathology lies in the hip. Missing this diagnosis can lead to severe complications like avascular necrosis.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 147: \"Typical patient... c/o pain in groin, thigh or knee... If the chief complaint is knee pain, there will be a paradoxical absence of any tenderness to palpation of the knee or any decreased ROM.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 5-year-old girl is brought to the clinic by her parents because she walks with her toes pointing inward. The parents are concerned about her gait. Examination reveals increased internal rotation of the hip. The physician diagnoses femoral anteversion. What is the most appropriate management for this patient?",
+                options: {
+                    A: "Corrective shoes",
+                    B: "Derotational osteotomy immediately",
+                    C: "Denis Browne bar",
+                    D: "Observation and reassurance",
+                    E: "Serial casting"
+                },
+                correctAnswer: "D",
+                rationale: "Femoral anteversion usually manifests between 4-6 years of age and begins to resolve by age 9. Management in most cases is observation. Corrective shoes and braces have not been shown to alter the natural history.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 8: \"Management in most cases is observation... Femoral anteversion usually manifests between 4-6 years and begins to resolve by age 9.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 15-month-old boy is evaluated for \"bowlegs.\" He has been walking for 3 months. His examination shows symmetric genu varum. The parents are worried about his appearance. What is the expected natural history of alignment in this child?",
+                options: {
+                    A: "The varus deformity will progressively worsen until adulthood.",
+                    B: "The legs will straighten by age 2, then develop valgus (knock-knees) before normalizing.",
+                    C: "The varus will remain static throughout childhood.",
+                    D: "He will require bracing to correct the deformity.",
+                    E: "Surgery will be required at age 4."
+                },
+                correctAnswer: "B",
+                rationale: "Alignment at birth is almost always in varus until about 2 years of age. Valgus then predominates throughout childhood, with residual adult valgus of 5-7 degrees at the distal femur appearing later. Management of physiologic bowlegs is observational.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 10: \"Alignment at birth is almost always in varus until about 2 yoa with valgus then predominating throughout childhood...\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 7-year-old boy falls and sustains a Type 3 supracondylar humerus fracture. He presents to the ER 2 hours after the injury. Why is this specific fracture pattern considered an emergent/urgent situation requiring treatment within 24 hours?",
+                options: {
+                    A: "High risk of non-union",
+                    B: "High risk of neurovascular compromise",
+                    C: "High risk of infection",
+                    D: "Cosmetic deformity",
+                    E: "Risk of arthritis in the shoulder"
+                },
+                correctAnswer: "B",
+                rationale: "Type 3 supracondylar fractures are completely displaced and carry a high risk of neurovascular compromise. They are considered emergent/urgent and should be treated within 24 hours.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 111: \"Emergent/Urgent... Type 3 Supracondyalr fractures, <24 hrs -> Neurovascular compromise.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 6-year-old girl falls on an outstretched hand and sustains a distal radius fracture. The fracture is located 2 cm from the growth plate (physis). Regarding the remodeling potential of this fracture, which of the following statements is true?",
+                options: {
+                    A: "This fracture has poor remodeling potential because it is intra-articular.",
+                    B: "Faster remodeling occurs because the fracture is near the physis.",
+                    C: "Remodeling is unlikely because the child is over 5 years old.",
+                    D: "The fracture must be perfectly aligned because children do not remodel bone.",
+                    E: "The fracture will result in growth arrest."
+                },
+                correctAnswer: "B",
+                rationale: "Distance from the physis is important for remodeling. Bone grows from the ends adjacent to physes, and faster remodeling (correction of malalignment) occurs nearest the physis.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 79: \"Faster remodeling, or correction of malalignment, occurs nearest physis.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO4: Distinguish a [hip condition A] from [hip condition B]. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO4: Distinguish a slipped capital femoral epiphysis (SCFE) from Perthes disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 13-year-old overweight male presents with a 2-month history of right knee pain and a limp. He denies trauma. On physical exam, his right hip externally rotates when the hip is flexed. What is the most likely diagnosis?",
+                options: {
+                    A: "Legg-Calve-Perthes Disease",
+                    B: "Slipped Capital Femoral Epiphysis (SCFE)",
+                    C: "Osgood-Schlatter Disease",
+                    D: "Septic Arthritis",
+                    E: "Developmental Dysplasia of the Hip"
+                },
+                correctAnswer: "B",
+                rationale: "The typical patient for SCFE is an overweight boy between 10-14 years old complaining of groin, thigh, or knee pain. Exam findings often include decreased internal rotation and external rotation upon hip flexion.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 147: \"Typical patient is overweight boy between 10-14 yrs who c/o pain in groin, thigh or knee... Exam demonstrates pain and decreased ROM – particularly internal rotation.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO4: Distinguish a [hip condition A] from [hip condition B]. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO4: Distinguish a slipped capital femoral epiphysis (SCFE) from Perthes disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 6-year-old Caucasian male presents with a painless limp that worsens with activity. Radiographs reveal fragmentation of the femoral head ossific nucleus. The etiology of this condition is believed to be disruption of blood supply to the capital femoral epiphysis. What is the diagnosis?",
+                options: {
+                    A: "Slipped Capital Femoral Epiphysis (SCFE)",
+                    B: "Perthes Disease (Legg-Calve-Perthes)",
+                    C: "Septic Hip",
+                    D: "Femoral Neck Fracture",
+                    E: "Transient Synovitis"
+                },
+                correctAnswer: "B",
+                rationale: "Perthes disease typically affects boys between 4-8 years old. It is essentially avascular necrosis (AVN) of the capital femoral epiphysis in children. Radiographic stages include fragmentation and reossification.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 118 & 123: \"Ultimate problem is disruption of the blood supply to capital femoral epiphysis... Usually boys between 4-8 yrs... Usually presents as a painless limp.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 13-year-old female is evaluated for scoliosis. Radiographs demonstrate a Cobb angle of 30 degrees. She is Risser stage 0 (premenarchal). According to recent expert panels, what is the primary indication for bracing in this patient?",
+                options: {
+                    A: "To correct the curve back to 0 degrees.",
+                    B: "To treat pain associated with the curve.",
+                    C: "To decrease the risk of curve progression.",
+                    D: "To improve pulmonary function immediately.",
+                    E: "To reverse vertebral rotation."
+                },
+                correctAnswer: "C",
+                rationale: "Bracing is recommended for curves between 25 and 40 degrees in patients with significant growth remaining. Recent expert panels suggest bracing decreases the risk of progression by 20-30% in premenarchal patients. Bracing maintains but does not correct the curve.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 35: \"Recent expert panel 'decrease risk of progression by 20-30% in premenarchal patients'... Maintains but does not correct.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 14-year-old male presents with back pain. X-rays reveal a left thoracic curve. Why is this specific curve pattern considered a \"red flag\" in the diagnosis of idiopathic scoliosis?",
+                options: {
+                    A: "Left thoracic curves progress faster than right curves.",
+                    B: "Left thoracic curves are associated with non-idiopathic causes (e.g., tumors, syrinx).",
+                    C: "Left thoracic curves are more common in females.",
+                    D: "Left thoracic curves cause more cosmetic deformity.",
+                    E: "Left thoracic curves respond poorly to surgery."
+                },
+                correctAnswer: "B",
+                rationale: "The most common curve pattern in idiopathic scoliosis is Right thoracic. A Left thoracic curve is considered a \"red flag\" and warrants further evaluation to rule out other causes.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 26: \"Most common curve pattern is Right thoracic... Left thoracic curve: red flag.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A pediatrician is examining a newborn female born via breech presentation. When abducting the hip with gentle anterior pressure, a \"clunk\" is felt. Which physical exam maneuver is being performed?",
+                options: {
+                    A: "Barlow test",
+                    B: "Ortolani test",
+                    C: "Galeazzi sign",
+                    D: "Trendelenburg test",
+                    E: "Thomas test"
+                },
+                correctAnswer: "B",
+                rationale: "The Ortolani test involves a \"clunk\" sensation with gentle abduction, indicating the reduction of a dislocated hip. The Barlow test provokes dislocation with adduction and posterior force.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 161: \"Ortolani - Clunk with gentle abduction.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 15-month-old girl is brought to the clinic because she has a \"waddling\" gait. She was not screened for hip dysplasia as an infant. Physical exam reveals limited abduction of the hips. Bilateral developmental dysplasia of the hip (DDH) is suspected. Which clinical sign is most likely to be present in an older walking child with DDH?",
+                options: {
+                    A: "Positive Ortolani sign",
+                    B: "Positive Barlow sign",
+                    C: "Trendelenburg gait",
+                    D: "Knee pain",
+                    E: "Foot drop"
+                },
+                correctAnswer: "C",
+                rationale: "In older children (walking age), Ortolani and Barlow signs are often negative. Clinical signs include limited abduction and a Trendelenburg gait (or waddling gait if bilateral).",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 161: \"In children of walking age look for Trendelenberg gait... Waddling gait may be only sign [in bilateral cases].\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 13-year-old male basketball player presents with anterior knee pain and a painful bump on the proximal tibia. The condition is diagnosed as Osgood-Schlatter disease. What is the underlying pathology of this condition?",
+                options: {
+                    A: "Infection of the tibial tubercle",
+                    B: "Avascular necrosis of the tibial tubercle",
+                    C: "Apophysitis of the tibial tubercle due to traction from the patellar tendon",
+                    D: "Fracture of the distal femur",
+                    E: "Tear of the meniscus"
+                },
+                correctAnswer: "C",
+                rationale: "Osgood-Schlatter disease is an apophysitis of the Tibia Tubercle at the site of the Patellar tendon insertion. It is common in adolescents participating in running or jumping sports.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 61: \"Apophysitis of the Tibia Tubercle at site of Patellar tendon insertion.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A 10-year-old soccer player complains of heel pain. Physical exam reveals tenderness over the calcaneal tuberosity. The physician diagnoses Sever's disease. This condition is caused by inflammation of the growth plate due to traction from which structure?",
+                options: {
+                    A: "Plantar fascia",
+                    B: "Achilles tendon",
+                    C: "Posterior tibial tendon",
+                    D: "Peroneal tendons",
+                    E: "Deltoid ligament"
+                },
+                correctAnswer: "B",
+                rationale: "Sever's disease is an inflammation and pain over the calcaneal tuberosity due to traction from the Achilles tendon. It typically occurs between 8-12 years of age.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 64: \"Inflammation and pain over the calcaneal tuberosity due to traction from Achilles.\""
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "A newborn is evaluated for a foot deformity. The foot is plantarflexed, inverted, and adducted. The physician attempts to passively correct the foot to a neutral position but finds that the deformity is rigid. This rigidity distinguishes clubfoot from which other common condition?",
+                options: {
+                    A: "Metatarsus adductus (flexible)",
+                    B: "Vertical talus",
+                    C: "Tarsal coalition",
+                    D: "Calcaneovalgus foot",
+                    E: "Polydactyly"
+                },
+                correctAnswer: "A",
+                rationale: "While some deformities like postural clubfoot or metatarsus adductus can be flexible (passively correctable), true idiopathic clubfoot is characterized by rigidity.",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 49: \"All are rigid.\" (Contrast with Metatarsus Adductus Slide 48: \"The flexible foot usually needs nothing but time...\")."
+            },
+            {
+                section: "Common Childhood Musculoskeletal Conditions",
+                maskedLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                fullLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
+                question: "Which of the following sets of deformities comprise the \"CAVE\" mnemonic used to describe the four main deformities seen in congenital clubfoot?",
+                options: {
+                    A: "Calcaneal valgus, Adductus, Varus, Eversion",
+                    B: "Cavus (midfoot), Adductus (forefoot), Varus (hindfoot), Equinus (hindfoot)",
+                    C: "Cavus, Abduction, Valgus, Extension",
+                    D: "Calcaneal varus, Adduction, Valgus, Equinus",
+                    E: "Cavus, Adduction, Vertical talus, Eversion"
+                },
+                correctAnswer: "B",
+                rationale: "The four main deformities of clubfoot are Midfoot Cavus, Forefoot Adductus, Heel/Hindfoot Varus, and Hindfoot Equinus (CAVE).",
+                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 29: \"Four main deformities ('CAVE'): Midfoot cavus, Forefoot adductus, Heel/hindfoot varus, Hindfoot equinus.\""
+            },
+
+            // --- Immune-mediated Connective Tissue and Multi-system Disorders ---
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A 30-year-old woman presents with fatigue and arthralgias. An ANA test is ordered and comes back positive at a titer of 1:40. Which of the following is a limitation of ANA testing that must be considered when interpreting this result?",
+                options: {
+                    A: "ANA is highly specific for Systemic Lupus Erythematosus (SLE).",
+                    B: "ANA testing has low sensitivity for SLE.",
+                    C: "A positive ANA may be present in 5-10% of the normal, healthy population.",
+                    D: "ANA titers decrease with age in healthy persons.",
+                    E: "A titer of 1:40 is considered strongly positive."
+                },
+                correctAnswer: "C",
+                rationale: "ANA testing lacks specificity. It can be positive in chronic infections, malignancy, organ-specific autoimmune diseases, or in 5-10% of the normal healthy population. A titer of at least 1:80 is generally needed to be considered a positive test in the context of autoimmune disease evaluation.",
+                source: "Immune-mediated Connective Tissue..., Slide 18: \"Lacks specificity... +ANA may... be positive in 5-10% of the normal, healthy population.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A clinician suspects systemic lupus erythematosus (SLE) in a patient with a malar rash and pleuritis. An ANA test is performed. What is the primary diagnostic utility of the ANA test in this context?",
+                options: {
+                    A: "It confirms the diagnosis of SLE with 100% specificity.",
+                    B: "It has high sensitivity, making it useful when there is a high pretest probability for systemic autoimmune disease.",
+                    C: "It determines the severity of the disease.",
+                    D: "It predicts renal involvement.",
+                    E: "It is used to monitor disease activity over time."
+                },
+                correctAnswer: "B",
+                rationale: "The ANA test has high sensitivity for SLE (almost always positive in SLE). It is most useful when there is a high pretest probability for systemic autoimmune disease.",
+                source: "Immune-mediated Connective Tissue..., Slide 18: \"High sensitivity... Most useful if there is a high pretest probability for systemic autoimmune disease.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO2: Differentiate [vasospastic condition A] from [vasospastic condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO2: Differentiate Raynaud’s disease from secondary Raynaud’s phenomenon. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A 45-year-old woman presents with triphasic color changes in her fingers upon exposure to cold. Physical examination reveals digital pitting scars and nailfold capillary abnormalities (dilated loops and drop out). These findings are most consistent with:",
+                options: {
+                    A: "Primary Raynaud’s (Raynaud’s disease)",
+                    B: "Secondary Raynaud’s phenomenon",
+                    C: "Frostbite",
+                    D: "Carpal tunnel syndrome",
+                    E: "Erythromelalgia"
+                },
+                correctAnswer: "B",
+                rationale: "Secondary Raynaud’s is associated with underlying connective tissue disease. Key differentiating features include abnormal nailfold capillaries, irreversible tissue injury (digital ulceration, pitting), and older age of onset (>30 years). Primary Raynaud's has normal nailfold capillaries and no tissue injury.",
+                source: "Immune-mediated Connective Tissue..., Slide 28: \"Secondary Raynaud's... Digital ulcers, digital pitting, gangrene... Abnormal [Nailfold capillaries].\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO2: Differentiate [vasospastic condition A] from [vasospastic condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO2: Differentiate Raynaud’s disease from secondary Raynaud’s phenomenon. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "Which of the following demographic or clinical features is most characteristic of Primary Raynaud’s (Raynaud’s disease)?",
+                options: {
+                    A: "Male gender",
+                    B: "Onset age > 40 years",
+                    C: "Asymmetric attacks",
+                    D: "Family history",
+                    E: "Association with systemic sclerosis"
+                },
+                correctAnswer: "D",
+                rationale: "Primary Raynaud's typically presents in young women (onset 15-30 years) and a family history increases the risk. It is not associated with tissue injury or other systemic diseases.",
+                source: "Immune-mediated Connective Tissue..., Slide 23: \"Primary Raynaud's... Family history increase risk.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, [various scleroderma types], Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, diffuse systemic sclerosis, limited systemic sclerosis, Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A 35-year-old woman presents with skin thickening that extends proximal to her elbows and knees, involving her trunk. She also reports difficulty swallowing and new onset high blood pressure. She tests positive for Scl-70 antibodies. This presentation is most consistent with:",
+                options: {
+                    A: "Limited Systemic Scleroderma",
+                    B: "Diffuse Systemic Scleroderma",
+                    C: "Systemic Lupus Erythematosus",
+                    D: "Eosinophilic Fasciitis",
+                    E: "Morphea"
+                },
+                correctAnswer: "B",
+                rationale: "Diffuse Systemic Scleroderma is defined by skin thickening that extends proximal to the elbows or knees or involves the trunk. It is associated with Scl-70 (anti-topoisomerase I) antibodies and a higher risk of scleroderma renal crisis and interstitial lung disease.",
+                source: "Immune-mediated Connective Tissue..., Slide 60: \"Diffuse SSc... Skin thickening... Extends proximal to the elbows or knees or with truncal involvement... Autoantibodies... Scl-70.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, diffuse systemic sclerosis, limited systemic sclerosis, Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, diffuse systemic sclerosis, limited systemic sclerosis, Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A patient presents with dry eyes (keratoconjunctivitis sicca) and dry mouth (xerostomia). Serologic testing is positive for ANA, Anti-SSA, and Anti-SSB antibodies. The physician should monitor this patient for the development of malignancy in which of the following organs?",
+                options: {
+                    A: "Kidney",
+                    B: "Lung",
+                    C: "Parotid gland",
+                    D: "Liver",
+                    E: "Bone marrow"
+                },
+                correctAnswer: "C",
+                rationale: "This patient likely has Sjögren’s syndrome. Patients with Sjögren’s have a significantly increased risk (1000-fold) of MALT lymphoma, particularly in the parotid gland. Persistent unilateral parotid swelling merits biopsy.",
+                source: "Immune-mediated Connective Tissue..., Slide 52: \"1000-fold increased risk of MALT lymphoma of the parotid gland in Sjögren’s Syndrome compared to the general population.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, [condition], and anti-synthetase syndrome. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, dermatomyositis, and anti-synthetase syndrome. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A 50-year-old woman presents with proximal muscle weakness and a purple rash on her eyelids (heliotrope rash) and knuckles (Gottron’s papules). A muscle biopsy shows perimysial inflammation with CD4+ T cells and perifascicular atrophy. What is the most likely diagnosis?",
+                options: {
+                    A: "Polymyositis",
+                    B: "Dermatomyositis",
+                    C: "Inclusion Body Myositis",
+                    D: "Anti-synthetase syndrome",
+                    E: "Drug-induced myopathy"
+                },
+                correctAnswer: "B",
+                rationale: "Dermatomyositis is characterized by proximal muscle weakness and pathognomonic skin findings (heliotrope rash, Gottron’s papules). Muscle biopsy typically shows CD4+ T cell perimysial inflammation and perifascicular atrophy.",
+                source: "Immune-mediated Connective Tissue..., Slide 68: \"Dermatomyositis... Muscle biopsy: CD4+ T cell perimysial inflammation with perifascicular atrophy.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, dermatomyositis, and [condition]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, dermatomyositis, and anti-synthetase syndrome. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A patient presents with inflammatory myositis, interstitial lung disease, non-erosive arthritis, and \"mechanic's hands\" (thickened, cracked skin on lateral fingers). Laboratory testing is most likely to reveal which of the following antibodies?",
+                options: {
+                    A: "Anti-dsDNA",
+                    B: "Anti-Centromere",
+                    C: "Anti-Jo-1",
+                    D: "Anti-Smith",
+                    E: "Anti-Scl-70"
+                },
+                correctAnswer: "C",
+                rationale: "This constellation of symptoms describes Anti-synthetase syndrome. It is associated with myositis-specific autoantibodies, most commonly Anti-Jo-1 (an aminoacyl-tRNA synthetase antibody).",
+                source: "Immune-mediated Connective Tissue..., Slide 67: \"Antisynthetase syndrome... Clinical features: Inflammatory Myositis, Interstitial lung disease... Mechanic’s hands... Myositis-specific autoantibodies: Jo-1.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate [condition A] from [condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate polymyalgia rheumatica from polymyositis. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "A 72-year-old woman complains of severe stiffness and pain in her shoulder and hip girdles, particularly in the morning. She denies objective muscle weakness. Labs show a very elevated ESR but a normal Creatine Kinase (CK). Which condition is most consistent with these findings?",
+                options: {
+                    A: "Polymyositis",
+                    B: "Dermatomyositis",
+                    C: "Polymyalgia Rheumatica (PMR)",
+                    D: "Fibromyalgia",
+                    E: "Osteoarthritis"
+                },
+                correctAnswer: "C",
+                rationale: "PMR affects older adults (>50) and presents with pain/stiffness in proximal muscles without objective weakness. ESR is very elevated, but muscle enzymes (CK) are normal. Polymyositis would show objective weakness and elevated CK.",
+                source: "Immune-mediated Connective Tissue..., Slide 71: \"PMR... Pain: Yes... Weakness: No... ESR: Very elevated... CK: Normal.\""
+            },
+            {
+                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
+                maskedLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate [condition A] from [condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                fullLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate polymyalgia rheumatica from polymyositis. (Immune-mediated Connective Tissue and Multi-system Disorders)",
+                question: "In distinguishing Polymyalgia Rheumatica (PMR) from Polymyositis, which of the following features points towards a diagnosis of Polymyositis?",
+                options: {
+                    A: "Age > 50 years",
+                    B: "Presence of objective muscle weakness",
+                    C: "Normal CK level",
+                    D: "Rapid response to low-dose prednisone",
+                    E: "Absence of autoantibodies"
+                },
+                correctAnswer: "B",
+                rationale: "Polymyositis is characterized by objective muscle weakness and elevated CK. PMR is characterized by stiffness and pain without weakness and normal CK.",
+                source: "Immune-mediated Connective Tissue..., Slide 71: \"Polymyositis... Weakness: Yes.\""
+            },
+
+            // --- Selected Topics in Pediatric Rheumatology ---
+            {
+                section: "Selected Topics in Pediatric Rheumatology",
+                maskedLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
+                fullLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
+                question: "A 4-year-old girl is evaluated for a limp. She has had swelling in her left knee for 8 weeks. To meet the criteria for Juvenile Idiopathic Arthritis (JIA), the onset of symptoms must occur before what age?",
+                options: {
+                    A: "10 years",
+                    B: "12 years",
+                    C: "16 years",
+                    D: "18 years",
+                    E: "21 years"
+                },
+                correctAnswer: "C",
+                rationale: "JIA is defined by the onset of inflammatory arthritis in one or more joints lasting at least 6 weeks with an age of onset less than 16 years.",
+                source: "Select Topics in Pediatric Rheumatology, Slide 7: \"Age of onset < 16 years.\""
+            },
+            {
+                section: "Selected Topics in Pediatric Rheumatology",
+                maskedLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
+                fullLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
+                question: "A child is diagnosed with JIA. According to the ILAR criteria (2004), the specific subtype of JIA is defined by the extent and pattern of joint involvement during what time period?",
+                options: {
+                    A: "The first 4 weeks of disease",
+                    B: "The first 6 months of disease",
+                    C: "The first year of disease",
+                    D: "The first 2 years of disease",
+                    E: "Any time during the disease course"
+                },
+                correctAnswer: "B",
+                rationale: "The subtype of JIA (e.g., Oligoarticular vs Polyarticular) is defined by the extent and pattern of joint involvement in the first 6 months of the disease.",
+                source: "Select Topics in Pediatric Rheumatology, Slide 7: \"Subtype is defined by the extent & pattern of joint involvement in the first 6 months of disease.\""
+            },
+            {
+                section: "Selected Topics in Pediatric Rheumatology",
+                maskedLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
+                fullLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
+                question: "A 3-year-old girl presents with a limp and swelling of the left knee. She has no systemic symptoms. Laboratory testing is positive for ANA. She is diagnosed with Oligoarticular JIA. Because of her diagnosis and ANA status, she is at highest risk for which complication?",
+                options: {
+                    A: "Macrophage Activation Syndrome",
+                    B: "Chronic anterior uveitis",
+                    C: "Renal failure",
+                    D: "Pericarditis",
+                    E: "Interstitial lung disease"
+                },
+                correctAnswer: "B",
+                rationale: "Oligoarticular JIA patients, particularly those who are ANA positive and young (<7 years), are at the highest risk for chronic anterior uveitis. It is typically asymptomatic, so frequent screening with a slit-lamp exam is required.",
+                source: "Select Topics in Pediatric Rheumatology, Slide 12: \"JIA-associated uveitis... Highest risk: Oligoarticular JIA, ANA+, Age of onset < 7.\""
+            },
+            {
+                section: "Selected Topics in Pediatric Rheumatology",
+                maskedLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
+                fullLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
+                question: "Which of the following clinical features is most characteristic of Oligoarticular JIA?",
+                options: {
+                    A: "Involvement of >4 joints in the first 6 months",
+                    B: "Symmetric involvement of small joints of the hands",
+                    C: "Peak age of onset in adolescence",
+                    D: "Asymmetric involvement of large joints like the knee",
+                    E: "Frequent fevers and rash"
+                },
+                correctAnswer: "D",
+                rationale: "Oligoarticular JIA affects ≤4 joints in the first 6 months. It typically affects large joints like the knees and ankles in an asymmetric pattern. It is the most common subtype and has a peak onset in toddlers (1-4 years).",
+                source: "Select Topics in Pediatric Rheumatology, Slide 9: \"≤ 4 joints in first 6 months, asymmetric... Knee is most commonly affected joint.\""
+            },
+            {
+                section: "Selected Topics in Pediatric Rheumatology",
+                maskedLO: "LO3: Compare and contrast [condition A] with [condition B]. (Select Topics in Pediatric Rheumatology)",
+                fullLO: "LO3: Compare and contrast systemic juvenile idiopathic arthritis with macrophage activation syndrome. (Select Topics in Pediatric Rheumatology)",
+                question: "A 5-year-old boy presents with daily spiking fevers, an evanescent salmon-colored rash, and hepatosplenomegaly. Laboratory results show elevated ferritin, leukocytosis, and thrombocytosis. What is the most likely diagnosis?",
+                options: {
+                    A: "Oligoarticular JIA",
+                    B: "Systemic JIA",
+                    C: "Kawasaki Disease",
+                    D: "Lyme Disease",
+                    E: "Septic Arthritis"
+                },
+                correctAnswer: "B",
+                rationale: "Systemic JIA is characterized by quotidian (daily spiking) fevers, evanescent salmon-colored rash, serositis, and organomegaly. Laboratory findings typically include elevated inflammatory markers (ESR, CRP, Ferritin), leukocytosis, and thrombocytosis.",
+                source: "Select Topics in Pediatric Rheumatology, Slide 15: \"Systemic JIA: Presentation... Quotidian fever... evanescent salmon-colored rash... hepatosplenomegaly... Leukocytosis, Thrombocytosis.\""
+            },
+            {
+                section: "Selected Topics in Pediatric Rheumatology",
+                maskedLO: "LO3: Compare and contrast [condition A] with [condition B]. (Select Topics in Pediatric Rheumatology)",
+                fullLO: "LO3: Compare and contrast systemic juvenile idiopathic arthritis with macrophage activation syndrome. (Select Topics in Pediatric Rheumatology)",
+                question: "A patient with known Systemic JIA suddenly becomes ill-appearing with persistent high fevers. Laboratory studies reveal pancytopenia (low WBC, low platelets), elevated liver enzymes, and an extremely high ferritin level. Fibrinogen is low. This presentation suggests the development of:",
+                options: {
+                    A: "Lupus Nephritis",
+                    B: "Macrophage Activation Syndrome (MAS)",
+                    C: "Bacterial Sepsis",
+                    D: "Disease flare of Systemic JIA",
+                    E: "Drug reaction"
+                },
+                correctAnswer: "B",
+                rationale: "MAS is a life-threatening complication of Systemic JIA. It is distinguished from active Systemic JIA by low blood counts (pancytopenia), low fibrinogen (consumption), and extremely high ferritin. In contrast, active Systemic JIA typically has high WBC, high platelets, and high fibrinogen.",
+                source: "Select Topics in Pediatric Rheumatology, Slide 29: \"Systemic JIA versus MAS... [MAS has] Low WBC, Low Platelets, Low Fibrinogen... VERY VERY High Ferritin.\""
+            }
+        ];
+
+        // --- Core Logic ---
+        const quizRoot = document.getElementById('quiz-root');
+        const themeSelect = document.getElementById('theme-select');
+        const pinBtn = document.getElementById('pin-btn');
+        const mainHeader = document.getElementById('main-header');
+
+        function initQuiz() {
+            // Render Questions
+            let currentSection = "";
+            
+            quizData.forEach((item, index) => {
+                // Insert Section Header if needed
+                if (item.section !== currentSection) {
+                    currentSection = item.section;
+                    const sectionHeader = document.createElement('h2');
+                    sectionHeader.className = 'section-header';
+                    sectionHeader.textContent = currentSection;
+                    quizRoot.appendChild(sectionHeader);
+                }
+
+                // Create Card
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${index}`;
+
+                // Learning Objective (Masked)
+                const loBox = document.createElement('div');
+                loBox.className = 'lo-box';
+                loBox.id = `lo-${index}`;
+                loBox.textContent = item.maskedLO;
+                card.appendChild(loBox);
+
+                // Question Text
+                const qText = document.createElement('div');
+                qText.className = 'question-text';
+                qText.textContent = `${index + 1}. ${item.question}`;
+                card.appendChild(qText);
+
+                // Options Container
+                const optionsGrid = document.createElement('div');
+                optionsGrid.className = 'options-grid';
+
+                for (const [key, value] of Object.entries(item.options)) {
+                    const label = document.createElement('label');
+                    label.className = 'option-label';
+                    
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = `question-${index}`;
+                    input.value = key;
+
+                    const span = document.createElement('span');
+                    // Retain letters: A. Option Text
+                    span.textContent = `${key}. ${value}`;
+
+                    label.appendChild(input);
+                    label.appendChild(span);
+                    optionsGrid.appendChild(label);
+                }
+                card.appendChild(optionsGrid);
+
+                // Check Button
+                const btn = document.createElement('button');
+                btn.className = 'btn-check';
+                btn.textContent = 'Check Answer';
+                btn.onclick = () => checkAnswer(index);
+                card.appendChild(btn);
+
+                // Feedback Container
+                const feedback = document.createElement('div');
+                feedback.className = 'feedback';
+                feedback.id = `feedback-${index}`;
+                card.appendChild(feedback);
+
+                quizRoot.appendChild(card);
+            });
+
+            // Load saved theme
+            const savedTheme = localStorage.getItem('quizTheme') || 'dark';
+            changeTheme(savedTheme);
+            themeSelect.value = savedTheme;
+
+            // Load saved pin state
+            const savedPinState = localStorage.getItem('headerPinned');
+            // Default to true (pinned) if not set or if set to true
+            if (savedPinState === 'false') {
+                toggleHeader(false); 
+            } else {
+                toggleHeader(true);
+            }
+        }
+
+        function checkAnswer(index) {
+            const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+            const feedbackEl = document.getElementById(`feedback-${index}`);
+            const loEl = document.getElementById(`lo-${index}`);
+            const data = quizData[index];
+
+            if (!selected) {
+                alert("Please select an answer.");
+                return;
+            }
+
+            // Reveal LO
+            loEl.textContent = data.fullLO;
+
+            // Generate Feedback HTML
+            const isCorrect = selected.value === data.correctAnswer;
+            
+            let html = `<span class="feedback-header">${isCorrect ? "Correct!" : "Incorrect"}</span>`;
+            if (!isCorrect) {
+                html += `<div>The correct answer is <strong>${data.correctAnswer}</strong>.</div>`;
+            }
+            
+            html += `<div class="rationale"><strong>Rationale:</strong> ${data.rationale}</div>`;
+            html += `<div class="source"><strong>Source:</strong> ${data.source}</div>`;
+
+            feedbackEl.innerHTML = html;
+            feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedbackEl.style.display = 'block';
+        }
+
+        function changeTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('quizTheme', themeName);
+        }
+
+        function toggleHeader(forceState) {
+            // Determine current state based on class presence
+            const isCurrentlyPinned = !mainHeader.classList.contains('unpinned');
+            
+            // If forceState is provided (boolean), use it. Otherwise toggle current state.
+            const newState = (typeof forceState === 'boolean') ? forceState : !isCurrentlyPinned;
+
+            if (newState) {
+                // Pin
+                mainHeader.classList.remove('unpinned');
+                pinBtn.classList.add('pin-active');
+                localStorage.setItem('headerPinned', 'true');
+            } else {
+                // Unpin
+                mainHeader.classList.add('unpinned');
+                pinBtn.classList.remove('pin-active');
+                localStorage.setItem('headerPinned', 'false');
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', initQuiz);
+
+    </script>
+</body>
+</html>
