@@ -376,7 +376,7 @@
 <body>
 
     <header id="main-header">
-        <h1>Week 19 Wednesday & Thursday Practice Quiz</h1>
+        <h1>Week 19 Wednesday & Thursday Quiz</h1>
         <div class="controls-wrapper">
             <!-- Pin Button -->
             <button class="pin-btn pin-active" id="pin-btn" onclick="toggleHeader()" title="Pin/Unpin Header">
@@ -404,782 +404,634 @@
     <script>
         // --- Data ---
         const quizData = [
-            // --- Musculoskeletal Development ---
+            // --- MSK Emergencies/Trauma ---
             {
-                section: "Musculoskeletal Development",
-                maskedLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on [various limb deformities]. (Musculoskeletal Development)",
-                fullLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on brachydactyly, clubfoot, and developmental dysplasia of the hip. (Musculoskeletal Development)",
-                question: "A female neonate is born via vaginal delivery in the breech position. Physical examination reveals that the left foot is rigid and cannot be passively corrected to a neutral position. The foot is fixed in plantarflexion and inversion, with the forefoot adducted. Which of the following anatomic descriptions best characterizes the position of the tarsal bones in this patient?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO1: Identify the most common MSK injuries – [various injury types]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO1: Identify the most common MSK injuries – Sprains, Fractures, Dislocations. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A 22-year-old soccer player lands awkwardly after a jump and twists her ankle, causing an inversion injury. She presents with pain and swelling over the lateral aspect of the ankle. Which ligament is most likely injured in this patient?",
                 options: {
-                    A: "Talus medially deviated; Calcaneus valgus",
-                    B: "Talus laterally deviated; Calcaneus varus",
-                    C: "Talus medially deviated; Calcaneus varus",
-                    D: "Talus laterally deviated; Calcaneus valgus",
-                    E: "Talus neutral; Calcaneus valgus"
-                },
-                correctAnswer: "C",
-                rationale: "The clinical presentation is consistent with congenital clubfoot (talipes equinovarus). The tarsal bones are in a fixed position of maximal flexion and adduction. Specifically, the talus is medially deviated and plantarflexed, while the calcaneus is in varus and rotated medially around the talus.",
-                source: "Musculoskeletal Development, Slide 29: \"Talus = medially deviated and plantarflexed... Calcaneus = varus and rotated medially around talus.\""
-            },
-            {
-                section: "Musculoskeletal Development",
-                maskedLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on [various limb deformities]. (Musculoskeletal Development)",
-                fullLO: "LO1: Describe the basic development and morphogenesis of the appendicular (limb) and axial skeletons. Discuss joint morphogenesis and the clinical impact that it has on brachydactyly, clubfoot, and developmental dysplasia of the hip. (Musculoskeletal Development)",
-                question: "A 1-year-old boy is evaluated for short fingers. Physical examination shows shortening of the digits on both hands. Radiographs reveal abnormal development of the phalanges. A disruption in the signaling pathways controlling limb elongation and digit patterning is suspected. This condition is most accurately described as which of the following?",
-                options: {
-                    A: "Syndactyly",
-                    B: "Polydactyly",
-                    C: "Brachydactyly",
-                    D: "Amelia",
-                    E: "Meromelia"
-                },
-                correctAnswer: "C",
-                rationale: "Brachydactyly is defined as the shortening or absence of digits due to abnormal development of the phalanges, metacarpals, or metatarsals. It results from a disruption of signaling pathways that control limb elongation, digit patterning, and bone development.",
-                source: "Musculoskeletal Development, Slide 24: \"Brachydactyly... Shortening or absence of digits due to abnormal development of phalanges, metacarpals/metatarsals, or both.\""
-            },
-            {
-                section: "Musculoskeletal Development",
-                maskedLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and [cervical anomalies]. (Musculoskeletal Development)",
-                fullLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and cervical ribs. (Musculoskeletal Development)",
-                question: "During the 4th week of development, cells from the sclerotome migrate to form the vertebral column. A developmental biologist is observing the process by which the caudal half of each sclerotome grows into and fuses with the cephalic half of the adjacent sclerotome. This specific process, which is essential for the formation of vertebral bodies, is best known as:",
-                options: {
-                    A: "Lateral folding",
-                    B: "Gastrulation",
-                    C: "Resegmentation",
-                    D: "Chondrification",
-                    E: "Neurulation"
-                },
-                correctAnswer: "C",
-                rationale: "Vertebrae are formed by resegmentation, where the caudal half of each sclerotome fuses with the cephalic half of the adjacent sclerotome. This allows the myotomes to bridge the intervertebral discs, facilitating movement of the vertebral column.",
-                source: "Musculoskeletal Development, Slide 13: \"Resegmentation... Caudal half of each sclerotome grows into and fuses with cephalic half of each adjacent sclerotome.\""
-            },
-            {
-                section: "Musculoskeletal Development",
-                maskedLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and [cervical anomalies]. (Musculoskeletal Development)",
-                fullLO: "LO2: Discuss the formation of the vertebral bodies, intervertebral discs, ribs, and sternum, with reference to the role of the somites and their derivatives (sclerotomes and dermomyotomes). Discuss the clinical implications of abnormal development of these structures, including spina bifida and cervical ribs. (Musculoskeletal Development)",
-                question: "A 35-year-old woman presents with numbness and tingling in her right hand and forearm. A chest radiograph reveals an accessory bony structure attached to the C7 vertebra. The embryologic structure responsible for forming this anomaly typically differentiates into which of the following tissues?",
-                options: {
-                    A: "Dermis of the back",
-                    B: "Skeletal muscle of the limb",
-                    C: "Vertebrae and ribs",
-                    D: "Epidermis",
-                    E: "Visceral layer of lateral plate mesoderm"
-                },
-                correctAnswer: "C",
-                rationale: "The patient has a cervical rib, which is derived from the sclerotome of the somites (paraxial mesoderm). The sclerotome differentiates into the vertebrae and ribs.",
-                source: "Musculoskeletal Development, Slide 15: \"Each rib is also derived from sclerotome cells.\""
-            },
-            {
-                section: "Musculoskeletal Development",
-                maskedLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
-                fullLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
-                question: "A newborn is found to have an extra digit on the ulnar side of the hand. Genetic analysis reveals an abnormality in the expression of a specific protein within the zone of polarizing activity (ZPA). Which of the following proteins is most likely responsible for the anteroposterior patterning and digit formation in this patient?",
-                options: {
-                    A: "Fibroblast growth factor (FGF)",
-                    B: "Sonic hedgehog (SHH)",
-                    C: "Wnt-7a",
-                    D: "Bone morphogenetic protein (BMP)",
-                    E: "Retinoic acid"
+                    A: "Deltoid ligament",
+                    B: "Anterior talofibular ligament (ATFL)",
+                    C: "Posterior talofibular ligament (PTFL)",
+                    D: "Calcaneofibular ligament (CFL)",
+                    E: "Anterior inferior tibiofibular ligament (AITFL)"
                 },
                 correctAnswer: "B",
-                rationale: "The zone of polarizing activity (ZPA) is located at the posterior edge of the apical ectodermal ridge (AER). It secretes sonic hedgehog (SHH) protein, which contributes to the anteroposterior axis and digit formation (e.g., thumb on radial side, pinky on ulnar side). Abnormal expression can lead to polydactyly.",
-                source: "Musculoskeletal Development, Slide 20: \"Zone of polarizing activity (ZPA)... Secretes sonic hedgehog (SHH) protein... Contributes to anteroposterior axis and digit formation.\""
+                rationale: "Inversion ankle sprains (also known as lateral ankle sprains) account for 70-80% of all ankle sprains. The most important structures involved are the lateral ligaments, specifically the anterior talofibular ligament (ATFL) and the calcaneofibular ligament (CFL).",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 6: \"Inversion Ankle Sprain (AKA Lateral Ankle Sprain)... 70-80% of all ankle sprains... Important structures – Anterior talofibular ligament (ATFL).\""
             },
             {
-                section: "Musculoskeletal Development",
-                maskedLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
-                fullLO: "LO3: Examine the basic organization of the limb bud and discuss how outgrowth of the limb bud and development of the digits occurs with special reference to the genes involved in limb bud patterning along the dorsoventral and anteroposterior axes. (Musculoskeletal Development)",
-                question: "During limb development, a specific structure at the distal border of the limb bud induces the proliferation of the underlying mesenchyme, driving limb elongation from proximal to distal. If this thickened outer edge of ectoderm is damaged, limb outgrowth may be arrested. Which structure is being described?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO1: Identify the most common MSK injuries – [various injury types]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO1: Identify the most common MSK injuries – Sprains, Fractures, Dislocations. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A 45-year-old man is brought to the emergency department after a motor vehicle collision. He has an obvious deformity of his right thigh. Radiographs reveal a comminuted mid-shaft femur fracture. Based on the fracture terminology provided, which term best describes the \"shattered\" appearance of the bone fragments?",
                 options: {
-                    A: "Zone of polarizing activity (ZPA)",
-                    B: "Apical ectodermal ridge (AER)",
-                    C: "Neural crest",
-                    D: "Notochord",
-                    E: "Sclerotome"
-                },
-                correctAnswer: "B",
-                rationale: "The AER is the thickened outer edge of ectoderm at the distal border of the limb. It induces proliferation of the mesenchyme and is responsible for the elongation of the limb bud from proximal to distal.",
-                source: "Musculoskeletal Development, Slide 20: \"Apical ectodermal ridge (AER)... Thickened, outer edge of ectoderm... Induces proliferation of mesenchyme and elongation of limb bud proximal to distal.\""
-            },
-
-            // --- Lower Extremity Imaging ---
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "A trauma surgeon is evaluating a patient with a stab wound to the upper medial thigh. The surgeon needs to identify the borders of the femoral triangle to assess for potential vascular injury. Which of the following muscles forms the lateral border of this anatomical space?",
-                options: {
-                    A: "Adductor longus",
-                    B: "Gracilis",
-                    C: "Sartorius",
-                    D: "Pectineus",
-                    E: "Rectus femoris"
+                    A: "Simple",
+                    B: "Greenstick",
+                    C: "Comminuted",
+                    D: "Compound",
+                    E: "Hairline"
                 },
                 correctAnswer: "C",
-                rationale: "The borders of the femoral triangle are the Sartorius (lateral), Adductor Longus (medial), and the Inguinal Ligament (superior).",
-                source: "Lower Extremity Imaging Session, Slide 5: \"Borders of the Femoral Triangle... Lateral: Sartorius.\""
+                rationale: "Fracture terminology distinguishes between simple and comminuted fractures. A \"simple\" fracture implies a clean break, whereas a \"comminuted\" fracture is described as \"shattered,\" implying multiple bone fragments.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 13: \"Fracture Terminology... o Simple vs. Comminuted... o 'Clean' vs. 'Shattered'.\""
             },
             {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO1: Identify and label anatomical features of the anterior & medial thigh including osteological structures (pelvis, femur, tibia, patella), fascia & ligaments, neurovasculature, muscles, and compartments of the thigh. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "A radiologist is reviewing a cross-sectional CT image of the mid-thigh. She identifies a muscle group located in the medial compartment of the thigh responsible for hip adduction. Which of the following muscles is located within this compartment?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO1: Identify the most common MSK injuries – [various injury types]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO1: Identify the most common MSK injuries – Sprains, Fractures, Dislocations. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A 25-year-old man sustains a posterior hip dislocation during a football game. The on-call orthopaedic resident prepares for an emergent reduction. Which of the following is a primary goal of the immediate treatment for this joint dislocation?",
                 options: {
-                    A: "Rectus femoris",
-                    B: "Gracilis",
-                    C: "Biceps femoris",
-                    D: "Vastus lateralis",
-                    E: "Semitendinosus"
-                },
-                correctAnswer: "B",
-                rationale: "The medial compartment of the thigh contains the adductor muscles, including the Gracilis, Adductor longus, Adductor brevis, and Adductor magnus. The Rectus femoris is in the anterior compartment, and the Biceps femoris and Semitendinosus are in the posterior compartment.",
-                source: "Lower Extremity Imaging Session, Slide 7: \"Medial Compartment... 1. Gracilis.\""
-            },
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "A physician is performing a point-of-care ultrasound of the popliteal fossa to evaluate for a deep vein thrombosis. When visualizing the neurovascular structures in the popliteal fossa, which of the following relationships is correct regarding the position of the popliteal vein relative to the popliteal artery?",
-                options: {
-                    A: "The popliteal vein is deep to the popliteal artery.",
-                    B: "The popliteal vein is superficial (posterior) to the popliteal artery.",
-                    C: "The popliteal vein is medial to the popliteal artery.",
-                    D: "The popliteal vein is not located in the popliteal fossa.",
-                    E: "The popliteal vein is lateral to the nerve but deep to the artery."
-                },
-                correctAnswer: "B",
-                rationale: "In the popliteal fossa, the popliteal vein (PV) is located superficial (posterior) to the popliteal artery (PA). Ultrasound images demonstrate the PV sitting on top of the PA (closer to the probe).",
-                source: "Lower Extremity Imaging Session, Slide 17: \"Ultrasound Basics... Right Leg – Popliteal Fossa... [Image labels PV superficial to PA].\""
-            },
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO2: Identify and label anatomical features of the gluteal region, posterior thigh, and popliteal fossa including osteological structures (pelvis: ilium, ischium, & pubis, sacrum, coccyx, femur, fibula, and tibia), muscles, neurovasculature, fascia, ligaments, and anatomical spaces. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "A student is identifying muscles on a cross-sectional MRI of the thigh. They identify a muscle in the posterior compartment that has two heads (long and short). Which muscle is this?",
-                options: {
-                    A: "Semimembranosus",
-                    B: "Semitendinosus",
-                    C: "Biceps femoris",
-                    D: "Adductor magnus",
-                    E: "Gracilis"
+                    A: "Immediate surgical fixation with plates and screws",
+                    B: "Immobilization in a cast for 6 weeks before reduction",
+                    C: "Restoration of joint congruity as soon as possible",
+                    D: "Assessing for ligamentous laxity prior to reduction",
+                    E: "Obtaining an MRI to check for labral tears before reduction"
                 },
                 correctAnswer: "C",
-                rationale: "The posterior compartment of the thigh contains the hamstring muscles. The Biceps femoris is the only muscle in this compartment listed as having a long head and a short head.",
-                source: "Lower Extremity Imaging Session, Slide 7: \"Posterior Compartment... 1. Biceps femoris... Long head... Short head.\""
+                rationale: "The treatment goals for joint dislocation include restoring joint congruity and performing a reduction maneuver as soon as possible (ASAP). This is critical to prevent further cartilage damage and potential avascular necrosis (especially in the hip).",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 19: \"Joint Dislocation: Treatment Goals... • Restore joint congruity • Reduction maneuver ASAP.\""
             },
             {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "A cross-sectional image of the lower leg reveals the posterior compartment. The radiologist notes the superficial sub-compartment containing the gastrocnemius. Which other muscle is located in this superficial posterior compartment?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO2: Identify a common orthopaedic emergency – [condition]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO2: Identify a common orthopaedic emergency – Compartment Syndrome. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A 30-year-old male is hospitalized with a tibia fracture. Six hours after injury, he complains of severe pain in his leg that is out of proportion to the injury and worsens with passive stretching of the toes. What is the underlying pathophysiology responsible for the irreversible damage that may occur if this condition is not treated immediately?",
                 options: {
-                    A: "Tibialis posterior",
-                    B: "Flexor hallucis longus",
-                    C: "Soleus",
-                    D: "Flexor digitorum longus",
-                    E: "Popliteus"
+                    A: "Venous stasis leading to deep vein thrombosis",
+                    B: "Arterial vasospasm causing temporary ischemia",
+                    C: "Ischemia leading to necrosis after 6-8 hours",
+                    D: "Neuropraxia resulting in temporary sensory loss",
+                    E: "Lymphatic obstruction causing lymphedema"
                 },
                 correctAnswer: "C",
-                rationale: "The posterior compartment of the leg is divided into superficial and deep layers. The superficial layer contains the Gastrocnemius, Soleus, and Plantaris. The deep layer contains the Tibialis posterior, Flexor hallucis longus, Flexor digitorum longus, and Popliteus.",
-                source: "Lower Extremity Imaging Session, Slide 9: \"Posterior Compartment... Superficial... 1. Gastrocnemius, 2. Soleus, 3. Plantaris.\""
+                rationale: "Compartment syndrome involves increased pressure within a confined space causing ischemia. Hypoxic muscle initially undergoes reversible damage, but after 6-8 hours of ischemia, permanent muscle and nerve damage (necrosis) occurs.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 26: \"After 6-8 hours ischemia -> permanent muscle/nerve damage.\""
             },
             {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO3: Identify and label anatomical features of the posterior leg and sole of the foot including osteological structures (tibia, fibula, tarsal bones, metatarsals, phalanges), muscles and their tendons, fascia, neurovasculature, and the tarsal tunnel. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "On a CT angiogram of the lower extremity, a vessel is traced branching from the popliteal artery and traveling into the posterior compartment of the leg. This vessel eventually gives rise to the fibular artery. Which artery is being described?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO2: Identify a common orthopaedic emergency – [condition]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO2: Identify a common orthopaedic emergency – Compartment Syndrome. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A patient presents with a swollen, tense forearm after a crush injury. The physician suspects compartment syndrome. Which of the following physical exam findings is considered an early sign of this condition?",
                 options: {
-                    A: "Anterior tibial artery",
-                    B: "Posterior tibial artery",
-                    C: "Dorsalis pedis artery",
-                    D: "Deep femoral artery",
-                    E: "Lateral circumflex femoral artery"
-                },
-                correctAnswer: "B",
-                rationale: "The popliteal artery branches into the anterior tibial artery and the posterior tibial artery. The posterior tibial artery then gives rise to the fibular artery.",
-                source: "Lower Extremity Imaging Session, Slide 10: \"3. Posterior tibial a. ... Fibular a.\""
-            },
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "A patient presents with foot drop. A cross-sectional MRI of the leg is reviewed to assess the muscles of the anterior compartment. Which of the following muscles is located within the anterior compartment of the leg?",
-                options: {
-                    A: "Fibularis longus",
-                    B: "Tibialis anterior",
-                    C: "Soleus",
-                    D: "Tibialis posterior",
-                    E: "Flexor hallucis longus"
-                },
-                correctAnswer: "B",
-                rationale: "The anterior compartment of the leg contains the Tibialis anterior, Extensor digitorum longus, and Extensor hallucis longus. The Fibularis longus is in the lateral compartment.",
-                source: "Lower Extremity Imaging Session, Slide 9: \"Anterior Compartment... 1. Tibialis anterior.\""
-            },
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                fullLO: "LO4: Identify and label anatomical features of the anterior and lateral leg, dorsum of the foot, and lower extremity joints including osteological structures (femur, tibia, fibula, patella, tarsal bones, metatarsals, phalanges), muscles and tendons, neurovasculature, fascia and ligaments, menisci, and compartments of the leg. Recognize these features in radiographs, CT, and MRI. (Lower Extremity Imaging Session)",
-                question: "An anterior view radiograph of the knee is being evaluated. The physician identifies a bony prominence on the lateral aspect of the distal femur, superior to the lateral condyle. What is this structure?",
-                options: {
-                    A: "Medial epicondyle",
-                    B: "Adductor tubercle",
-                    C: "Lateral epicondyle",
-                    D: "Gerdy's tubercle",
-                    E: "Fibular head"
-                },
-                correctAnswer: "C",
-                rationale: "The lateral epicondyle is the bony prominence on the distal femur located lateral and superior to the lateral condyle.",
-                source: "Lower Extremity Imaging Session, Slide 4: \"Anterior view... Lateral epicondyle [labeled on diagram].\""
-            },
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
-                fullLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
-                question: "A 50-year-old male presents with unilateral leg swelling. A compression ultrasound is performed on the common femoral vein (CFV). The images show no change in the caliber of the CFV when compression is applied. What is the most likely diagnosis?",
-                options: {
-                    A: "Normal venous anatomy",
-                    B: "Deep Vein Thrombosis (DVT)",
-                    C: "Arterial occlusion",
-                    D: "Venous insufficiency without thrombosis",
-                    E: "Lymphatic obstruction"
-                },
-                correctAnswer: "B",
-                rationale: "A positive ultrasound finding for DVT is characterized by non-compressibility of the vein. If there is no or minimal change in the femoral vein caliber with compression, it indicates the presence of a thrombus preventing the walls from collapsing.",
-                source: "Lower Extremity Imaging Session, Slide 18: \"Positive DVT US... No/minimal change in Femoral Vein Caliber with compression.\""
-            },
-            {
-                section: "Lower Extremity Imaging",
-                maskedLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
-                fullLO: "LO5: Identify common pathologies and predict at-risk neurovascular structures and clinical presentation. (Lower Extremity Imaging Session)",
-                question: "A 75-year-old male with a history of diabetes mellitus presents with fever, left leg pain, and swelling. A CT scan of the left thigh reveals subcutaneous gas within the soft tissues. What is the most likely diagnosis?",
-                options: {
-                    A: "Deep Vein Thrombosis",
-                    B: "Cellulitis",
-                    C: "Necrotizing soft tissue infection (e.g., Fournier's gangrene/Necrotizing fasciitis)",
-                    D: "Femur fracture",
-                    E: "Lymphedema"
-                },
-                correctAnswer: "C",
-                rationale: "The presence of gas in the soft tissues on CT, combined with fever and pain in a diabetic patient, is highly suggestive of a severe necrotizing soft tissue infection (such as Fournier's gangrene or necrotizing fasciitis).",
-                source: "Lower Extremity Imaging Session, Slide 46: \"[Image showing gas in tissues]... FOURNIERS [labeled on slide].\" (Slide 44 vignette: 75 yo M, hx DM w/ fever and L leg pain and swelling)."
-            },
-
-            // --- Common Childhood Musculoskeletal Conditions ---
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A primary care physician is attending a seminar on pediatric orthopedics. The lecturer emphasizes that while most pediatric musculoskeletal conditions are benign, certain presentations require urgent referral. Which of the following clinical presentations is considered a \"red flag\" in a child with back pain/scoliosis?",
-                options: {
-                    A: "Right thoracic curve pattern",
-                    B: "Trunk asymmetry noted by parents",
-                    C: "Absence of neurological complaints",
-                    D: "Pain as the presenting complaint",
-                    E: "Diagnosis made during adolescence"
+                    A: "Pulselessness",
+                    B: "Pallor",
+                    C: "Paralysis",
+                    D: "Pain out of proportion to the injury",
+                    E: "Poikilothermia"
                 },
                 correctAnswer: "D",
-                rationale: "While mild pain may be present in idiopathic scoliosis, pain as the presenting complaint is considered a red flag that warrants further investigation to rule out pathology such as tumors or infection.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 28: \"Pain as presenting complaint: red flag.\""
+                rationale: "The classic \"6 P's\" (Pain, Pallor, Pulseless, Paraesthesia, Poikilothermia, Paralysis) are mostly very late findings. The earliest findings are pain out of proportion to the injury and pain with passive stretch.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 25: \"6 P’s (Mostly very late findings)... Earliest findings: – Pain out of proportion – Pain with passive stretch.\""
             },
             {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO1: Explain how common childhood musculoskeletal conditions are often benign but can be presenting features of severe or even life-threatening conditions. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 12-year-old boy presents with a limp and knee pain. Physical examination of the knee is unremarkable with full range of motion and no tenderness. However, examination of the hip reveals decreased internal rotation. Why is it critical to evaluate the hip in a child presenting with knee pain?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO2: Identify a common orthopaedic emergency – [condition]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO2: Identify a common orthopaedic emergency – Compartment Syndrome. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A patient with a diagnosed compartment syndrome of the thigh is taken to the operating room. The surgeon plans to perform a fasciotomy to release the pressure. Based on the anatomical compartments of the thigh, how many incisions are typically required to release the compartments in this region?",
                 options: {
-                    A: "Knee pain is always psychogenic in children.",
-                    B: "Hip pathology, such as SCFE, can present as referred pain to the knee.",
-                    C: "Knee pain usually indicates Osgood-Schlatter disease.",
-                    D: "Hip range of motion is unrelated to knee pathology.",
-                    E: "The knee and hip share the same joint capsule."
-                },
-                correctAnswer: "B",
-                rationale: "Slipped Capital Femoral Epiphysis (SCFE) typically presents with pain in the groin, thigh, or knee. If the chief complaint is knee pain, there may be a paradoxical absence of knee findings, while the pathology lies in the hip. Missing this diagnosis can lead to severe complications like avascular necrosis.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 147: \"Typical patient... c/o pain in groin, thigh or knee... If the chief complaint is knee pain, there will be a paradoxical absence of any tenderness to palpation of the knee or any decreased ROM.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 5-year-old girl is brought to the clinic by her parents because she walks with her toes pointing inward. The parents are concerned about her gait. Examination reveals increased internal rotation of the hip. The physician diagnoses femoral anteversion. What is the most appropriate management for this patient?",
-                options: {
-                    A: "Corrective shoes",
-                    B: "Derotational osteotomy immediately",
-                    C: "Denis Browne bar",
-                    D: "Observation and reassurance",
-                    E: "Serial casting"
-                },
-                correctAnswer: "D",
-                rationale: "Femoral anteversion usually manifests between 4-6 years of age and begins to resolve by age 9. Management in most cases is observation. Corrective shoes and braces have not been shown to alter the natural history.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 8: \"Management in most cases is observation... Femoral anteversion usually manifests between 4-6 years and begins to resolve by age 9.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO2: Recognize and describe self-limiting pediatric conditions including tibial torsion, femoral anteversion, genu varum, and pes planovalgus. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 15-month-old boy is evaluated for \"bowlegs.\" He has been walking for 3 months. His examination shows symmetric genu varum. The parents are worried about his appearance. What is the expected natural history of alignment in this child?",
-                options: {
-                    A: "The varus deformity will progressively worsen until adulthood.",
-                    B: "The legs will straighten by age 2, then develop valgus (knock-knees) before normalizing.",
-                    C: "The varus will remain static throughout childhood.",
-                    D: "He will require bracing to correct the deformity.",
-                    E: "Surgery will be required at age 4."
-                },
-                correctAnswer: "B",
-                rationale: "Alignment at birth is almost always in varus until about 2 years of age. Valgus then predominates throughout childhood, with residual adult valgus of 5-7 degrees at the distal femur appearing later. Management of physiologic bowlegs is observational.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 10: \"Alignment at birth is almost always in varus until about 2 yoa with valgus then predominating throughout childhood...\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 7-year-old boy falls and sustains a Type 3 supracondylar humerus fracture. He presents to the ER 2 hours after the injury. Why is this specific fracture pattern considered an emergent/urgent situation requiring treatment within 24 hours?",
-                options: {
-                    A: "High risk of non-union",
-                    B: "High risk of neurovascular compromise",
-                    C: "High risk of infection",
-                    D: "Cosmetic deformity",
-                    E: "Risk of arthritis in the shoulder"
-                },
-                correctAnswer: "B",
-                rationale: "Type 3 supracondylar fractures are completely displaced and carry a high risk of neurovascular compromise. They are considered emergent/urgent and should be treated within 24 hours.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 111: \"Emergent/Urgent... Type 3 Supracondyalr fractures, <24 hrs -> Neurovascular compromise.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO3: Outline and discuss the principles used to determine which pediatric fractures need urgent treatment versus those that can be treated on a more routine basis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 6-year-old girl falls on an outstretched hand and sustains a distal radius fracture. The fracture is located 2 cm from the growth plate (physis). Regarding the remodeling potential of this fracture, which of the following statements is true?",
-                options: {
-                    A: "This fracture has poor remodeling potential because it is intra-articular.",
-                    B: "Faster remodeling occurs because the fracture is near the physis.",
-                    C: "Remodeling is unlikely because the child is over 5 years old.",
-                    D: "The fracture must be perfectly aligned because children do not remodel bone.",
-                    E: "The fracture will result in growth arrest."
-                },
-                correctAnswer: "B",
-                rationale: "Distance from the physis is important for remodeling. Bone grows from the ends adjacent to physes, and faster remodeling (correction of malalignment) occurs nearest the physis.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 79: \"Faster remodeling, or correction of malalignment, occurs nearest physis.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO4: Distinguish a [hip condition A] from [hip condition B]. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO4: Distinguish a slipped capital femoral epiphysis (SCFE) from Perthes disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 13-year-old overweight male presents with a 2-month history of right knee pain and a limp. He denies trauma. On physical exam, his right hip externally rotates when the hip is flexed. What is the most likely diagnosis?",
-                options: {
-                    A: "Legg-Calve-Perthes Disease",
-                    B: "Slipped Capital Femoral Epiphysis (SCFE)",
-                    C: "Osgood-Schlatter Disease",
-                    D: "Septic Arthritis",
-                    E: "Developmental Dysplasia of the Hip"
-                },
-                correctAnswer: "B",
-                rationale: "The typical patient for SCFE is an overweight boy between 10-14 years old complaining of groin, thigh, or knee pain. Exam findings often include decreased internal rotation and external rotation upon hip flexion.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 147: \"Typical patient is overweight boy between 10-14 yrs who c/o pain in groin, thigh or knee... Exam demonstrates pain and decreased ROM – particularly internal rotation.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO4: Distinguish a [hip condition A] from [hip condition B]. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO4: Distinguish a slipped capital femoral epiphysis (SCFE) from Perthes disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 6-year-old Caucasian male presents with a painless limp that worsens with activity. Radiographs reveal fragmentation of the femoral head ossific nucleus. The etiology of this condition is believed to be disruption of blood supply to the capital femoral epiphysis. What is the diagnosis?",
-                options: {
-                    A: "Slipped Capital Femoral Epiphysis (SCFE)",
-                    B: "Perthes Disease (Legg-Calve-Perthes)",
-                    C: "Septic Hip",
-                    D: "Femoral Neck Fracture",
-                    E: "Transient Synovitis"
-                },
-                correctAnswer: "B",
-                rationale: "Perthes disease typically affects boys between 4-8 years old. It is essentially avascular necrosis (AVN) of the capital femoral epiphysis in children. Radiographic stages include fragmentation and reossification.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 118 & 123: \"Ultimate problem is disruption of the blood supply to capital femoral epiphysis... Usually boys between 4-8 yrs... Usually presents as a painless limp.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 13-year-old female is evaluated for scoliosis. Radiographs demonstrate a Cobb angle of 30 degrees. She is Risser stage 0 (premenarchal). According to recent expert panels, what is the primary indication for bracing in this patient?",
-                options: {
-                    A: "To correct the curve back to 0 degrees.",
-                    B: "To treat pain associated with the curve.",
-                    C: "To decrease the risk of curve progression.",
-                    D: "To improve pulmonary function immediately.",
-                    E: "To reverse vertebral rotation."
+                    A: "One incision on the medial side",
+                    B: "One incision on the anterior aspect",
+                    C: "One incision on the lateral aspect",
+                    D: "Two incisions (medial and lateral)",
+                    E: "Three incisions (anterior, medial, and posterior)"
                 },
                 correctAnswer: "C",
-                rationale: "Bracing is recommended for curves between 25 and 40 degrees in patients with significant growth remaining. Recent expert panels suggest bracing decreases the risk of progression by 20-30% in premenarchal patients. Bracing maintains but does not correct the curve.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 35: \"Recent expert panel 'decrease risk of progression by 20-30% in premenarchal patients'... Maintains but does not correct.\""
+                rationale: "The standard technique for a thigh fasciotomy typically involves a single lateral incision to access and release the anterior and posterior compartments (and often the medial via the same approach or a separate one if needed, but the slide depicts a single large lateral incision releasing the fascia).",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 28: \"Thigh Fasciotomy... [Image shows single large lateral incision exposing underlying muscle].\""
             },
             {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO5: Define differential diagnosis and indications for treatment of scoliosis. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 14-year-old male presents with back pain. X-rays reveal a left thoracic curve. Why is this specific curve pattern considered a \"red flag\" in the diagnosis of idiopathic scoliosis?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO3: Be familiar with lower extremity amputations – [types of amputations]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO3: Be familiar with lower extremity amputations – Transtibial, Knee disarticulation, Transfemoral. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A surgeon is planning a lower extremity amputation for a patient with severe trauma to the foot and distal tibia. The surgeon decides to perform the most common type of lower extremity amputation. Which procedure is being planned?",
                 options: {
-                    A: "Left thoracic curves progress faster than right curves.",
-                    B: "Left thoracic curves are associated with non-idiopathic causes (e.g., tumors, syrinx).",
-                    C: "Left thoracic curves are more common in females.",
-                    D: "Left thoracic curves cause more cosmetic deformity.",
-                    E: "Left thoracic curves respond poorly to surgery."
-                },
-                correctAnswer: "B",
-                rationale: "The most common curve pattern in idiopathic scoliosis is Right thoracic. A Left thoracic curve is considered a \"red flag\" and warrants further evaluation to rule out other causes.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 26: \"Most common curve pattern is Right thoracic... Left thoracic curve: red flag.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A pediatrician is examining a newborn female born via breech presentation. When abducting the hip with gentle anterior pressure, a \"clunk\" is felt. Which physical exam maneuver is being performed?",
-                options: {
-                    A: "Barlow test",
-                    B: "Ortolani test",
-                    C: "Galeazzi sign",
-                    D: "Trendelenburg test",
-                    E: "Thomas test"
-                },
-                correctAnswer: "B",
-                rationale: "The Ortolani test involves a \"clunk\" sensation with gentle abduction, indicating the reduction of a dislocated hip. The Barlow test provokes dislocation with adduction and posterior force.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 161: \"Ortolani - Clunk with gentle abduction.\""
-            },
-            {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO6: Describe the presentation of developmental hip dysplasia at differing ages. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 15-month-old girl is brought to the clinic because she has a \"waddling\" gait. She was not screened for hip dysplasia as an infant. Physical exam reveals limited abduction of the hips. Bilateral developmental dysplasia of the hip (DDH) is suspected. Which clinical sign is most likely to be present in an older walking child with DDH?",
-                options: {
-                    A: "Positive Ortolani sign",
-                    B: "Positive Barlow sign",
-                    C: "Trendelenburg gait",
-                    D: "Knee pain",
-                    E: "Foot drop"
+                    A: "Transfemoral amputation",
+                    B: "Knee disarticulation",
+                    C: "Transtibial amputation",
+                    D: "Syme amputation",
+                    E: "Hip disarticulation"
                 },
                 correctAnswer: "C",
-                rationale: "In older children (walking age), Ortolani and Barlow signs are often negative. Clinical signs include limited abduction and a Trendelenburg gait (or waddling gait if bilateral).",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 161: \"In children of walking age look for Trendelenberg gait... Waddling gait may be only sign [in bilateral cases].\""
+                rationale: "Transtibial amputation, also known as Below-Knee Amputation (BKA), is the most common lower extremity amputation.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 38: \"Transtibial... • Most common... • AKA Below-knee-amputation (BKA).\""
             },
             {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 13-year-old male basketball player presents with anterior knee pain and a painful bump on the proximal tibia. The condition is diagnosed as Osgood-Schlatter disease. What is the underlying pathology of this condition?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO3: Be familiar with lower extremity amputations – [types of amputations]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO3: Be familiar with lower extremity amputations – Transtibial, Knee disarticulation, Transfemoral. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A patient requires a transfemoral amputation due to a tumor in the distal femur. When discussing rehabilitation and prosthetics with the patient, the physician explains that walking with a transfemoral prosthesis requires more energy compared to a transtibial prosthesis. What anatomical factor contributes to the difficulties associated with transfemoral amputations?",
                 options: {
-                    A: "Infection of the tibial tubercle",
-                    B: "Avascular necrosis of the tibial tubercle",
-                    C: "Apophysitis of the tibial tubercle due to traction from the patellar tendon",
-                    D: "Fracture of the distal femur",
-                    E: "Tear of the meniscus"
+                    A: "Preservation of the knee joint",
+                    B: "A long lever arm",
+                    C: "A short lever arm",
+                    D: "The presence of end-bearing capability",
+                    E: "Reduced need for soft tissue coverage"
                 },
                 correctAnswer: "C",
-                rationale: "Osgood-Schlatter disease is an apophysitis of the Tibia Tubercle at the site of the Patellar tendon insertion. It is common in adolescents participating in running or jumping sports.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 61: \"Apophysitis of the Tibia Tubercle at site of Patellar tendon insertion.\""
+                rationale: "Transfemoral amputations (amputation through the femur) have the highest energy requirement for walking compared to knee disarticulation or BKA. A \"short lever arm\" is noted as being problematic for prosthetic control.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 36: \"Transfemoral... Highest energy requirement for walking... Short lever arm -> problematic.\""
             },
             {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO7: Explain the etiology of Osgood Schlatter and Sever’s disease. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A 10-year-old soccer player complains of heel pain. Physical exam reveals tenderness over the calcaneal tuberosity. The physician diagnoses Sever's disease. This condition is caused by inflammation of the growth plate due to traction from which structure?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO3: Be familiar with lower extremity amputations – [types of amputations]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO3: Be familiar with lower extremity amputations – Transtibial, Knee disarticulation, Transfemoral. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A patient undergoes a knee disarticulation. Which of the following is considered a primary biomechanical advantage (Pro) of this specific level of amputation?",
                 options: {
-                    A: "Plantar fascia",
-                    B: "Achilles tendon",
-                    C: "Posterior tibial tendon",
-                    D: "Peroneal tendons",
-                    E: "Deltoid ligament"
+                    A: "It requires a smaller prosthesis than a transtibial amputation",
+                    B: "It allows for end-bearing",
+                    C: "It is easier to fit the prosthetic socket than a transfemoral amputation",
+                    D: "It requires more muscle coverage than a transfemoral amputation",
+                    E: "It has a shorter lever arm than a transfemoral amputation"
                 },
                 correctAnswer: "B",
-                rationale: "Sever's disease is an inflammation and pain over the calcaneal tuberosity due to traction from the Achilles tendon. It typically occurs between 8-12 years of age.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 64: \"Inflammation and pain over the calcaneal tuberosity due to traction from Achilles.\""
+                rationale: "The advantages (Pros) of a knee disarticulation include the ability for end-bearing, not needing large areas of muscle to cover the end, and having a longer lever arm compared to an Above-Knee Amputation (AKA).",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 37: \"Knee Disarticulation... • Pros – End-bearing.\""
             },
             {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "A newborn is evaluated for a foot deformity. The foot is plantarflexed, inverted, and adducted. The physician attempts to passively correct the foot to a neutral position but finds that the deformity is rigid. This rigidity distinguishes clubfoot from which other common condition?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO4: Understand emergent treatment of pelvic trauma – [components]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO4: Understand emergent treatment of pelvic trauma – Assessment, Temporary stabilization. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A trauma patient presents with hemodynamic instability and a suspected pelvic ring injury. A pelvic binder is applied to stabilize the pelvis. To maximize the reduction of the pubic symphysis and effectively splint the pelvis, where should the binder be centered?",
                 options: {
-                    A: "Metatarsus adductus (flexible)",
-                    B: "Vertical talus",
-                    C: "Tarsal coalition",
-                    D: "Calcaneovalgus foot",
-                    E: "Polydactyly"
+                    A: "At the level of the iliac crests",
+                    B: "At the level of the umbilicus",
+                    C: "At the level of the greater trochanters",
+                    D: "At the level of the anterior superior iliac spines (ASIS)",
+                    E: "At the level of the proximal femur shaft"
                 },
-                correctAnswer: "A",
-                rationale: "While some deformities like postural clubfoot or metatarsus adductus can be flexible (passively correctable), true idiopathic clubfoot is characterized by rigidity.",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 49: \"All are rigid.\" (Contrast with Metatarsus Adductus Slide 48: \"The flexible foot usually needs nothing but time...\")."
+                correctAnswer: "C",
+                rationale: "Pelvic binders should be centered on the greater trochanters. Placement here improves symphysis reduction and provides a better splint. They are often incorrectly placed too high.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 56: \"Pelvic Binder Placement... • Centered on the greater trochanter!... • Why the GT? -> Improved symphysis reduction -> better splint.\""
             },
             {
-                section: "Common Childhood Musculoskeletal Conditions",
-                maskedLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                fullLO: "LO8: Differentiate a clubfoot from other newborn foot deformities. (Common Pediatric Foot Deformities / Scoliosis / Fractures)",
-                question: "Which of the following sets of deformities comprise the \"CAVE\" mnemonic used to describe the four main deformities seen in congenital clubfoot?",
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO4: Understand emergent treatment of pelvic trauma – [components]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO4: Understand emergent treatment of pelvic trauma – Assessment, Temporary stabilization. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "A patient arrives in the trauma bay with an unstable pelvic fracture and hypotension. The attending physician explains the \"Triad of Death\" that must be managed concurrently with stabilizing the fracture. This triad consists of coagulopathy, metabolic acidosis, and:",
                 options: {
-                    A: "Calcaneal valgus, Adductus, Varus, Eversion",
-                    B: "Cavus (midfoot), Adductus (forefoot), Varus (hindfoot), Equinus (hindfoot)",
-                    C: "Cavus, Abduction, Valgus, Extension",
-                    D: "Calcaneal varus, Adduction, Valgus, Equinus",
-                    E: "Cavus, Adduction, Vertical talus, Eversion"
+                    A: "Hyperkalemia",
+                    B: "Hypothermia",
+                    C: "Hyperglycemia",
+                    D: "Hypocalcemia",
+                    E: "Hypoxia"
                 },
                 correctAnswer: "B",
-                rationale: "The four main deformities of clubfoot are Midfoot Cavus, Forefoot Adductus, Heel/Hindfoot Varus, and Hindfoot Equinus (CAVE).",
-                source: "Common Pediatric Foot Deformities / Scoliosis / Fractures, Slide 29: \"Four main deformities ('CAVE'): Midfoot cavus, Forefoot adductus, Heel/hindfoot varus, Hindfoot equinus.\""
+                rationale: "The management of intrapelvic hemorrhage involves splinting the pelvis to allow a clot to form. This must be supported by resuscitation and addressing the \"Triad of Death,\" which consists of coagulopathy, metabolic acidosis, and hypothermia.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 52: \"Must be supported with: – Resuscitation – Correction of coagulopathy – Avoidance of hypothermia... [Image labeled Triad of Death includes Hypothermia].\""
+            },
+            {
+                section: "MSK Emergencies/Trauma",
+                maskedLO: "LO4: Understand emergent treatment of pelvic trauma – [components]. (Common Musculoskeletal Injuries and Emergencies)",
+                fullLO: "LO4: Understand emergent treatment of pelvic trauma – Assessment, Temporary stabilization. (Common Musculoskeletal Injuries and Emergencies)",
+                question: "Regarding the emergent management of unstable pelvic fractures, what is the primary physiologic benefit of applying a pelvic binder in a hemodynamically unstable patient?",
+                options: {
+                    A: "It directly repairs the injured blood vessels",
+                    B: "It reduces the volume of the pelvis, thereby improving cardiovascular function and decreasing transfusion requirements",
+                    C: "It eliminates the need for eventual surgical fixation",
+                    D: "It prevents deep vein thrombosis",
+                    E: "It allows for immediate ambulation"
+                },
+                correctAnswer: "B",
+                rationale: "Stabilizing the clot with binders improves cardiovascular (CV) function, decreases/reduces transfusion requirements, and decreases the risk of pulmonary complications.",
+                source: "Common Musculoskeletal Injuries and Emergencies, Slide 53: \"Stabilize the Clot: Why?... –Binders -> improve CV function -> decrease reduce transfusion requirements.\""
             },
 
-            // --- Immune-mediated Connective Tissue and Multi-system Disorders ---
+            // --- Musculoskeletal Aging ---
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A 30-year-old woman presents with fatigue and arthralgias. An ANA test is ordered and comes back positive at a titer of 1:40. Which of the following is a limitation of ANA testing that must be considered when interpreting this result?",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO1: Define the major features of [condition] and how it is related to the risk of falls and fractures. (Musculoskeletal Aging)",
+                fullLO: "LO1: Define the major features of sarcopenia and how it is related to the risk of falls and fractures. (Musculoskeletal Aging)",
+                question: "A geriatrician is reviewing the physiological changes associated with aging muscles. She notes that while muscle mass decreases with age, another factor declines even more precipitously and is a stronger predictor of functional decline. This loss of muscle power is termed:",
                 options: {
-                    A: "ANA is highly specific for Systemic Lupus Erythematosus (SLE).",
-                    B: "ANA testing has low sensitivity for SLE.",
-                    C: "A positive ANA may be present in 5-10% of the normal, healthy population.",
-                    D: "ANA titers decrease with age in healthy persons.",
-                    E: "A titer of 1:40 is considered strongly positive."
+                    A: "Sarcopenia",
+                    B: "Dynapenia",
+                    C: "Myosteatosis",
+                    D: "Osteopenia",
+                    E: "Hypertrophy"
+                },
+                correctAnswer: "B",
+                rationale: "While sarcopenia refers to the loss of muscle mass, dynapenia refers specifically to the loss of muscle power. The loss of muscle power (dynapenia) with age is more pronounced than the loss of muscle mass (sarcopenia).",
+                source: "Musculoskeletal Aging, Slide 12: \"Loss of muscle power (dynapenia) with age is more pronounced than loss of muscle mass with age (sarcopenia).\""
+            },
+            {
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO1: Define the major features of [condition] and how it is related to the risk of falls and fractures. (Musculoskeletal Aging)",
+                fullLO: "LO1: Define the major features of sarcopenia and how it is related to the risk of falls and fractures. (Musculoskeletal Aging)",
+                question: "A researcher investigates the cellular mechanisms underlying sarcopenia in the elderly. Which of the following cellular changes is considered a contributing mechanism to the development of sarcopenia?",
+                options: {
+                    A: "Increased motor unit number",
+                    B: "Increased mitochondrial function",
+                    C: "Altered proteostasis",
+                    D: "Decreased inflammation",
+                    E: "Hyperplasia of satellite cells"
                 },
                 correctAnswer: "C",
-                rationale: "ANA testing lacks specificity. It can be positive in chronic infections, malignancy, organ-specific autoimmune diseases, or in 5-10% of the normal healthy population. A titer of at least 1:80 is generally needed to be considered a positive test in the context of autoimmune disease evaluation.",
-                source: "Immune-mediated Connective Tissue..., Slide 18: \"Lacks specificity... +ANA may... be positive in 5-10% of the normal, healthy population.\""
+                rationale: "Several cellular mechanisms contribute to sarcopenia, including altered satellite cell number/function, mitochondrial dysfunction, increased inflammation, and altered proteostasis (the regulation of protein synthesis and degradation).",
+                source: "Musculoskeletal Aging, Slide 15: \"[Diagram showing contributors to Sarcopenia]... Altered proteostasis.\""
             },
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO1: Indicate the diagnostic utility and limitations of anti-nuclear antibody testing. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A clinician suspects systemic lupus erythematosus (SLE) in a patient with a malar rash and pleuritis. An ANA test is performed. What is the primary diagnostic utility of the ANA test in this context?",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO1: Define the major features of [condition] and how it is related to the risk of falls and fractures. (Musculoskeletal Aging)",
+                fullLO: "LO1: Define the major features of sarcopenia and how it is related to the risk of falls and fractures. (Musculoskeletal Aging)",
+                question: "A 79-year-old hospitalized patient is evaluated for fall risk. According to research presented on musculoskeletal aging, which biometric marker measured at admission is an independent predictor of falls and mortality 3 months post-discharge?",
                 options: {
-                    A: "It confirms the diagnosis of SLE with 100% specificity.",
-                    B: "It has high sensitivity, making it useful when there is a high pretest probability for systemic autoimmune disease.",
-                    C: "It determines the severity of the disease.",
-                    D: "It predicts renal involvement.",
-                    E: "It is used to monitor disease activity over time."
+                    A: "High Body Mass Index (BMI)",
+                    B: "Low skeletal muscle mass",
+                    C: "Elevated serum creatinine",
+                    D: "Low bone mineral density",
+                    E: "High caloric intake"
                 },
                 correctAnswer: "B",
-                rationale: "The ANA test has high sensitivity for SLE (almost always positive in SLE). It is most useful when there is a high pretest probability for systemic autoimmune disease.",
-                source: "Immune-mediated Connective Tissue..., Slide 18: \"High sensitivity... Most useful if there is a high pretest probability for systemic autoimmune disease.\""
+                rationale: "Research indicates that lower skeletal muscle mass at admission independently predicts falls and mortality 3 months post-discharge in hospitalized older patients.",
+                source: "Musculoskeletal Aging, Slide 10: \"Lower Skeletal Muscle Mass at Admission Independently Predicts Falls and Mortality 3 Months Post-discharge in Hospitalized Older Patients.\""
             },
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO2: Differentiate [vasospastic condition A] from [vasospastic condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO2: Differentiate Raynaud’s disease from secondary Raynaud’s phenomenon. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A 45-year-old woman presents with triphasic color changes in her fingers upon exposure to cold. Physical examination reveals digital pitting scars and nailfold capillary abnormalities (dilated loops and drop out). These findings are most consistent with:",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO2: Describe how to assess a patient’s risk for a [condition]. (Musculoskeletal Aging)",
+                fullLO: "LO2: Describe how to assess a patient’s risk for a bone fracture. (Musculoskeletal Aging)",
+                question: "A 65-year-old woman undergoes a DXA scan. Her T-score at the femoral neck is -2.6. Based on the WHO criteria, how would you classify her bone density status?",
                 options: {
-                    A: "Primary Raynaud’s (Raynaud’s disease)",
-                    B: "Secondary Raynaud’s phenomenon",
-                    C: "Frostbite",
-                    D: "Carpal tunnel syndrome",
-                    E: "Erythromelalgia"
+                    A: "Normal",
+                    B: "Osteopenia",
+                    C: "Osteoporosis",
+                    D: "Severe Osteoporosis",
+                    E: "Osteomalacia"
+                },
+                correctAnswer: "C",
+                rationale: "The WHO criteria define osteoporosis as a T-score of < -2.5. A score of -2.6 falls into this category.",
+                source: "Musculoskeletal Aging, Slide 34: \"WHO criteria for T-Scores... Osteoporosis: < -2.5.\""
+            },
+            {
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO2: Describe how to assess a patient’s risk for a [condition]. (Musculoskeletal Aging)",
+                fullLO: "LO2: Describe how to assess a patient’s risk for a bone fracture. (Musculoskeletal Aging)",
+                question: "A physician uses the FRAX tool to calculate a patient's fracture risk. Which of the following specific outputs does the FRAX tool provide?",
+                options: {
+                    A: "Lifetime probability of any fracture",
+                    B: "10-year probability of hip fracture and major osteoporotic fracture",
+                    C: "5-year probability of vertebral fracture",
+                    D: "Relative risk of fracture compared to a 30-year-old",
+                    E: "Detailed analysis of trabecular bone score"
                 },
                 correctAnswer: "B",
-                rationale: "Secondary Raynaud’s is associated with underlying connective tissue disease. Key differentiating features include abnormal nailfold capillaries, irreversible tissue injury (digital ulceration, pitting), and older age of onset (>30 years). Primary Raynaud's has normal nailfold capillaries and no tissue injury.",
-                source: "Immune-mediated Connective Tissue..., Slide 28: \"Secondary Raynaud's... Digital ulcers, digital pitting, gangrene... Abnormal [Nailfold capillaries].\""
+                rationale: "The FRAX algorithms give the 10-year probability of hip fracture and the 10-year probability of a major osteoporotic fracture (clinical spine, forearm, hip, or humerus fracture).",
+                source: "Musculoskeletal Aging, Slide 36: \"The FRAX algorithms give the 10-year probability of hip fracture and the 10-year probability of a major osteoporotic fracture...\""
             },
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO2: Differentiate [vasospastic condition A] from [vasospastic condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO2: Differentiate Raynaud’s disease from secondary Raynaud’s phenomenon. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "Which of the following demographic or clinical features is most characteristic of Primary Raynaud’s (Raynaud’s disease)?",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO2: Describe how to assess a patient’s risk for a [condition]. (Musculoskeletal Aging)",
+                fullLO: "LO2: Describe how to assess a patient’s risk for a bone fracture. (Musculoskeletal Aging)",
+                question: "When assessing a patient's risk for fracture, which of the following is considered a risk factor that cannot be changed?",
                 options: {
-                    A: "Male gender",
-                    B: "Onset age > 40 years",
-                    C: "Asymmetric attacks",
-                    D: "Family history",
-                    E: "Association with systemic sclerosis"
+                    A: "Smoking",
+                    B: "Low calcium intake",
+                    C: "Family history",
+                    D: "Excessive alcohol consumption",
+                    E: "Sedentary lifestyle"
+                },
+                correctAnswer: "C",
+                rationale: "Osteoporosis risk factors are categorized into those that can and cannot be changed. Factors that cannot be changed include older age, female gender, menopause, family history, body type, and history of broken bones/height loss.",
+                source: "Musculoskeletal Aging, Slide 28: \"Osteoporosis Risk Factors... Can’t be changed... Family history.\""
+            },
+            {
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO3: Apply pharmacotherapeutic agents that alter bone remodeling, including bisphosphonates, SERMs, Anti-RANKL therapies, PTH therapies, and anti-sclerostin therapies, to osteoporosis cases. (Musculoskeletal Aging)",
+                fullLO: "LO3: Apply pharmacotherapeutic agents that alter bone remodeling, including bisphosphonates, SERMs, Anti-RANKL therapies, PTH therapies, and anti-sclerostin therapies, to osteoporosis cases. (Musculoskeletal Aging)",
+                question: "A postmenopausal woman with osteoporosis is prescribed denosumab (Prolia). What is the primary mechanism of action of this drug?",
+                options: {
+                    A: "It acts as a recombinant parathyroid hormone to stimulate osteoblasts",
+                    B: "It binds to hydroxyapatite crystals to inhibit osteoclast attachment",
+                    C: "It inhibits sclerostin to promote bone formation",
+                    D: "It is a monoclonal antibody that inhibits RANKL, preventing osteoclast differentiation",
+                    E: "It acts as a selective estrogen receptor modulator"
                 },
                 correctAnswer: "D",
-                rationale: "Primary Raynaud's typically presents in young women (onset 15-30 years) and a family history increases the risk. It is not associated with tissue injury or other systemic diseases.",
-                source: "Immune-mediated Connective Tissue..., Slide 23: \"Primary Raynaud's... Family history increase risk.\""
+                rationale: "Denosumab is a recombinant human monoclonal antibody that inhibits RANKL, which is the primary signal for bone resorption. By inhibiting RANKL, it prevents it from binding to RANK on osteoclasts.",
+                source: "Musculoskeletal Aging, Slide 49: \"Denosumab (Prolia)... Mechanism of Action... A recombinant human monoclonal antibody that inhibits RANKL, the primary signal for bone resorption.\""
             },
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, [various scleroderma types], Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, diffuse systemic sclerosis, limited systemic sclerosis, Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A 35-year-old woman presents with skin thickening that extends proximal to her elbows and knees, involving her trunk. She also reports difficulty swallowing and new onset high blood pressure. She tests positive for Scl-70 antibodies. This presentation is most consistent with:",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO3: Apply pharmacotherapeutic agents that alter bone remodeling, including bisphosphonates, SERMs, Anti-RANKL therapies, PTH therapies, and anti-sclerostin therapies, to osteoporosis cases. (Musculoskeletal Aging)",
+                fullLO: "LO3: Apply pharmacotherapeutic agents that alter bone remodeling, including bisphosphonates, SERMs, Anti-RANKL therapies, PTH therapies, and anti-sclerostin therapies, to osteoporosis cases. (Musculoskeletal Aging)",
+                question: "A patient is prescribed alendronate (Fosamax) for osteoporosis. To ensure proper absorption and minimize adverse effects, which administration instruction must be provided to the patient?",
                 options: {
-                    A: "Limited Systemic Scleroderma",
-                    B: "Diffuse Systemic Scleroderma",
-                    C: "Systemic Lupus Erythematosus",
-                    D: "Eosinophilic Fasciitis",
-                    E: "Morphea"
-                },
-                correctAnswer: "B",
-                rationale: "Diffuse Systemic Scleroderma is defined by skin thickening that extends proximal to the elbows or knees or involves the trunk. It is associated with Scl-70 (anti-topoisomerase I) antibodies and a higher risk of scleroderma renal crisis and interstitial lung disease.",
-                source: "Immune-mediated Connective Tissue..., Slide 60: \"Diffuse SSc... Skin thickening... Extends proximal to the elbows or knees or with truncal involvement... Autoantibodies... Scl-70.\""
-            },
-            {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, diffuse systemic sclerosis, limited systemic sclerosis, Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO3: Illustrate the commonalities as well as the distinguishing clinical and pathologic features of the notable autoimmune connective tissue disorders: systemic lupus erythematosus, anti-phospholipid syndrome, diffuse systemic sclerosis, limited systemic sclerosis, Sjögren’s syndrome, and mixed connective tissue disease. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A patient presents with dry eyes (keratoconjunctivitis sicca) and dry mouth (xerostomia). Serologic testing is positive for ANA, Anti-SSA, and Anti-SSB antibodies. The physician should monitor this patient for the development of malignancy in which of the following organs?",
-                options: {
-                    A: "Kidney",
-                    B: "Lung",
-                    C: "Parotid gland",
-                    D: "Liver",
-                    E: "Bone marrow"
+                    A: "Take with a fatty meal to increase absorption",
+                    B: "Lie down immediately after taking the medication to prevent dizziness",
+                    C: "Remain upright for 30-60 minutes after administration",
+                    D: "Take right before bed",
+                    E: "Crush the tablet and mix with applesauce"
                 },
                 correctAnswer: "C",
-                rationale: "This patient likely has Sjögren’s syndrome. Patients with Sjögren’s have a significantly increased risk (1000-fold) of MALT lymphoma, particularly in the parotid gland. Persistent unilateral parotid swelling merits biopsy.",
-                source: "Immune-mediated Connective Tissue..., Slide 52: \"1000-fold increased risk of MALT lymphoma of the parotid gland in Sjögren’s Syndrome compared to the general population.\""
+                rationale: "Oral bisphosphonates like alendronate require patients to remain upright (do not lie down) for 30-60 minutes to prevent esophageal irritation and ensure delivery to the stomach.",
+                source: "Musculoskeletal Aging, Slide 48: \"Bisphosphonates... Administration... Oral formulations require patients to remain upright (do not lie down) for 30-60 minutes.\""
             },
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, [condition], and anti-synthetase syndrome. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, dermatomyositis, and anti-synthetase syndrome. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A 50-year-old woman presents with proximal muscle weakness and a purple rash on her eyelids (heliotrope rash) and knuckles (Gottron’s papules). A muscle biopsy shows perimysial inflammation with CD4+ T cells and perifascicular atrophy. What is the most likely diagnosis?",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO3: Apply pharmacotherapeutic agents that alter bone remodeling, including bisphosphonates, SERMs, Anti-RANKL therapies, PTH therapies, and anti-sclerostin therapies, to osteoporosis cases. (Musculoskeletal Aging)",
+                fullLO: "LO3: Apply pharmacotherapeutic agents that alter bone remodeling, including bisphosphonates, SERMs, Anti-RANKL therapies, PTH therapies, and anti-sclerostin therapies, to osteoporosis cases. (Musculoskeletal Aging)",
+                question: "A 70-year-old woman with severe osteoporosis is considered for treatment with Romosozumab (Evenity). This drug works by inhibiting which protein to promote bone formation?",
                 options: {
-                    A: "Polymyositis",
-                    B: "Dermatomyositis",
-                    C: "Inclusion Body Myositis",
-                    D: "Anti-synthetase syndrome",
-                    E: "Drug-induced myopathy"
+                    A: "RANKL",
+                    B: "Sclerostin",
+                    C: "Osteoprotegerin (OPG)",
+                    D: "Calcitonin",
+                    E: "Cathepsin K"
                 },
                 correctAnswer: "B",
-                rationale: "Dermatomyositis is characterized by proximal muscle weakness and pathognomonic skin findings (heliotrope rash, Gottron’s papules). Muscle biopsy typically shows CD4+ T cell perimysial inflammation and perifascicular atrophy.",
-                source: "Immune-mediated Connective Tissue..., Slide 68: \"Dermatomyositis... Muscle biopsy: CD4+ T cell perimysial inflammation with perifascicular atrophy.\""
+                rationale: "Romosozumab is a monoclonal antibody that binds and inhibits sclerostin. Inhibiting sclerostin prevents the inhibition of bone formation and promotes the survival and proliferation of osteoblasts.",
+                source: "Musculoskeletal Aging, Slide 51: \"Romosozumab (Evenity)... Mechanism of Action... binds and inhibits sclerostin, preventing inhibition of bone formation...\""
             },
             {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, dermatomyositis, and [condition]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO4: Identify and differentiate the key clinical and pathologic features of the idiopathic inflammatory myopathies: polymyositis, dermatomyositis, and anti-synthetase syndrome. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A patient presents with inflammatory myositis, interstitial lung disease, non-erosive arthritis, and \"mechanic's hands\" (thickened, cracked skin on lateral fingers). Laboratory testing is most likely to reveal which of the following antibodies?",
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO4: Identify the lifestyle modifications that can reduce the risk for falls and fractures in older patients. (Musculoskeletal Aging)",
+                fullLO: "LO4: Identify the lifestyle modifications that can reduce the risk for falls and fractures in older patients. (Musculoskeletal Aging)",
+                question: "A study regarding exercise in older adults (~70 years) demonstrated that a specific type of exercise training increased muscle stem cell (satellite cell) number and muscle fiber size. What type of exercise was used in this protocol?",
                 options: {
-                    A: "Anti-dsDNA",
-                    B: "Anti-Centromere",
-                    C: "Anti-Jo-1",
-                    D: "Anti-Smith",
-                    E: "Anti-Scl-70"
-                },
-                correctAnswer: "C",
-                rationale: "This constellation of symptoms describes Anti-synthetase syndrome. It is associated with myositis-specific autoantibodies, most commonly Anti-Jo-1 (an aminoacyl-tRNA synthetase antibody).",
-                source: "Immune-mediated Connective Tissue..., Slide 67: \"Antisynthetase syndrome... Clinical features: Inflammatory Myositis, Interstitial lung disease... Mechanic’s hands... Myositis-specific autoantibodies: Jo-1.\""
-            },
-            {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate [condition A] from [condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate polymyalgia rheumatica from polymyositis. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "A 72-year-old woman complains of severe stiffness and pain in her shoulder and hip girdles, particularly in the morning. She denies objective muscle weakness. Labs show a very elevated ESR but a normal Creatine Kinase (CK). Which condition is most consistent with these findings?",
-                options: {
-                    A: "Polymyositis",
-                    B: "Dermatomyositis",
-                    C: "Polymyalgia Rheumatica (PMR)",
-                    D: "Fibromyalgia",
-                    E: "Osteoarthritis"
-                },
-                correctAnswer: "C",
-                rationale: "PMR affects older adults (>50) and presents with pain/stiffness in proximal muscles without objective weakness. ESR is very elevated, but muscle enzymes (CK) are normal. Polymyositis would show objective weakness and elevated CK.",
-                source: "Immune-mediated Connective Tissue..., Slide 71: \"PMR... Pain: Yes... Weakness: No... ESR: Very elevated... CK: Normal.\""
-            },
-            {
-                section: "Immune-mediated Connective Tissue and Multi-system Disorders",
-                maskedLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate [condition A] from [condition B]. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                fullLO: "LO5: Cite the historical, physical exam and laboratory features that discriminate polymyalgia rheumatica from polymyositis. (Immune-mediated Connective Tissue and Multi-system Disorders)",
-                question: "In distinguishing Polymyalgia Rheumatica (PMR) from Polymyositis, which of the following features points towards a diagnosis of Polymyositis?",
-                options: {
-                    A: "Age > 50 years",
-                    B: "Presence of objective muscle weakness",
-                    C: "Normal CK level",
-                    D: "Rapid response to low-dose prednisone",
-                    E: "Absence of autoantibodies"
+                    A: "Long-distance running",
+                    B: "Resistance training",
+                    C: "Static stretching",
+                    D: "Tai Chi",
+                    E: "Aquatic aerobics"
                 },
                 correctAnswer: "B",
-                rationale: "Polymyositis is characterized by objective muscle weakness and elevated CK. PMR is characterized by stiffness and pain without weakness and normal CK.",
-                source: "Immune-mediated Connective Tissue..., Slide 71: \"Polymyositis... Weakness: Yes.\""
+                rationale: "Resistance exercise was shown to increase muscle stem cell (satellite cell) number and muscle fiber size in older adults.",
+                source: "Musculoskeletal Aging, Slide 54: \"Resistance exercise increases muscle stem cell number & fiber size in older (~70 yrs) adults.\""
+            },
+            {
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO4: Identify the lifestyle modifications that can reduce the risk for falls and fractures in older patients. (Musculoskeletal Aging)",
+                fullLO: "LO4: Identify the lifestyle modifications that can reduce the risk for falls and fractures in older patients. (Musculoskeletal Aging)",
+                question: "Regarding nutritional supplementation for bone health, a meta-analysis discussed in the lecture indicated a potential risk associated with calcium supplementation. What specific adverse event was found to be significantly increased in women taking calcium supplements?",
+                options: {
+                    A: "Kidney stones",
+                    B: "Myocardial infarction",
+                    C: "Stroke",
+                    D: "Peptic ulcer disease",
+                    E: "Liver failure"
+                },
+                correctAnswer: "B",
+                rationale: "A study cited in the lecture (BMJ 2008) indicated that calcium supplements significantly increased the risk of cardiovascular events, specifically myocardial infarction.",
+                source: "Musculoskeletal Aging, Slide 62: \"Calcium supplements significantly increased risk of cardiovascular events... [Table highlights Myocardial infarction risk].\""
+            },
+            {
+                section: "Musculoskeletal Aging",
+                maskedLO: "LO4: Identify the lifestyle modifications that can reduce the risk for falls and fractures in older patients. (Musculoskeletal Aging)",
+                fullLO: "LO4: Identify the lifestyle modifications that can reduce the risk for falls and fractures in older patients. (Musculoskeletal Aging)",
+                question: "A 72-year-old man asks about physical activity to improve his bone density. According to the cohort study of 1228 men and women presented, which intensity of physical activity was necessary to show independent improvements in bone mineral density (BMD)?",
+                options: {
+                    A: "Any level of physical activity",
+                    B: "Light physical activity only",
+                    C: "Moderate to vigorous physical activity",
+                    D: "Physical activity did not improve BMD in this age group",
+                    E: "Only vigorous activity (sprinting)"
+                },
+                correctAnswer: "C",
+                rationale: "The study showed that moderate and vigorous physical activity were independent predictors of measured bone properties, whereas light physical activity was not as effective. Moderate/Vigorous PA > Light PA.",
+                source: "Musculoskeletal Aging, Slide 58: \"Moderate/vigorous physical activity improves BMD in older (~70 yrs) adults... Moderate / Vigorous PA > Light PA.\""
             },
 
-            // --- Selected Topics in Pediatric Rheumatology ---
+            // --- Infectious Arthritis & Osteomyelitis ---
             {
-                section: "Selected Topics in Pediatric Rheumatology",
-                maskedLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
-                fullLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
-                question: "A 4-year-old girl is evaluated for a limp. She has had swelling in her left knee for 8 weeks. To meet the criteria for Juvenile Idiopathic Arthritis (JIA), the onset of symptoms must occur before what age?",
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO1: Explain the differences between hematogenous and contiguous [bone infection] in terms of microbiology & epidemiology. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO1: Explain the differences between hematogenous and contiguous osteomyelitis in terms of microbiology & epidemiology. (Osteomyelitis & Infectious Arthritis)",
+                question: "A 6-year-old boy presents with fever and pain in his proximal tibia. He has no history of trauma or surgery. The physician suspects acute hematogenous osteomyelitis. Which organism is the most common cause of hematogenous osteomyelitis in this age group?",
                 options: {
-                    A: "10 years",
-                    B: "12 years",
-                    C: "16 years",
-                    D: "18 years",
-                    E: "21 years"
+                    A: "Pseudomonas aeruginosa",
+                    B: "Staphylococcus aureus",
+                    C: "Salmonella species",
+                    D: "Escherichia coli",
+                    E: "Group B Streptococcus"
+                },
+                correctAnswer: "B",
+                rationale: "Staphylococcus aureus is the #1 cause of hematogenous osteomyelitis.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 13: \"Hematogenous osteomyelitis (microbiology)... S. aureus #1.\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO1: Explain the differences between hematogenous and contiguous [bone infection] in terms of microbiology & epidemiology. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO1: Explain the differences between hematogenous and contiguous osteomyelitis in terms of microbiology & epidemiology. (Osteomyelitis & Infectious Arthritis)",
+                question: "A patient develops osteomyelitis in the foot following a puncture wound through a sneaker. Which organism is classically associated with this specific mechanism of contiguous infection?",
+                options: {
+                    A: "Pasteurella multocida",
+                    B: "Pseudomonas aeruginosa",
+                    C: "Eikenella corrodens",
+                    D: "Staphylococcus epidermidis",
+                    E: "Streptococcus pyogenes"
+                },
+                correctAnswer: "B",
+                rationale: "While the slide on contiguous osteomyelitis mentions Pasteurella for bites, Pseudomonas is listed under chronic osteomyelitis pathogenesis. In the context of traumatic injury (like the image of the foot/nail), Pseudomonas is a key pathogen. Note: While the specific \"sneaker\" detail is a common medical board association, the slide links Pseudomonas generally to traumatic injury/chronic osteo.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 26: \"Chronic osteomyelitis... Pseudomonas [arrow from traumatic injury image].\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO1: Explain the differences between hematogenous and contiguous [bone infection] in terms of microbiology & epidemiology. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO1: Explain the differences between hematogenous and contiguous osteomyelitis in terms of microbiology & epidemiology. (Osteomyelitis & Infectious Arthritis)",
+                question: "A patient presents with osteomyelitis of the hand following a cat bite. Which organism is most likely responsible for this contiguous infection?",
+                options: {
+                    A: "Staphylococcus aureus",
+                    B: "Pasteurella multocida",
+                    C: "Eikenella corrodens",
+                    D: "Bartonella henselae",
+                    E: "Capnocytophaga canimorsus"
+                },
+                correctAnswer: "B",
+                rationale: "Contiguous osteomyelitis resulting from bites (specifically cat or dog bites) is commonly caused by Pasteurella multocida and mixed mouth flora.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 16: \"Contiguous osteomyelitis (bites)... Pasteurella multocida.\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO2: Summarize the pathogenesis of [bone infection] in infants, older children, adults. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO2: Summarize the pathogenesis of osteomyelitis in infants, older children, adults. (Osteomyelitis & Infectious Arthritis)",
+                question: "In infants, acute hematogenous osteomyelitis often spreads to involve the adjacent joint (septic arthritis). What anatomical feature in infants facilitates this spread?",
+                options: {
+                    A: "The joint capsule attaches directly to the metaphysis",
+                    B: "The presence of a thick, avascular periosteum",
+                    C: "Transphyseal blood vessels connecting the metaphysis to the epiphysis",
+                    D: "A robust immune system in the synovial fluid",
+                    E: "The absence of a nutrient artery"
                 },
                 correctAnswer: "C",
-                rationale: "JIA is defined by the onset of inflammatory arthritis in one or more joints lasting at least 6 weeks with an age of onset less than 16 years.",
-                source: "Select Topics in Pediatric Rheumatology, Slide 7: \"Age of onset < 16 years.\""
+                rationale: "In infants, blood vessels cross the physis (growth plate), allowing infection to spread from the metaphysis into the epiphysis and subsequently into the joint space. This results in a 50% rate of concurrent septic arthritis.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 8: \"Acute osteomyelitis (infants)... [Diagram showing vessels crossing physis]... 50% [arrow to joint infection].\""
             },
             {
-                section: "Selected Topics in Pediatric Rheumatology",
-                maskedLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
-                fullLO: "LO1: Review the unique features and classification of Juvenile Idiopathic Arthritis. (Select Topics in Pediatric Rheumatology)",
-                question: "A child is diagnosed with JIA. According to the ILAR criteria (2004), the specific subtype of JIA is defined by the extent and pattern of joint involvement during what time period?",
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO2: Summarize the pathogenesis of [bone infection] in infants, older children, adults. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO2: Summarize the pathogenesis of osteomyelitis in infants, older children, adults. (Osteomyelitis & Infectious Arthritis)",
+                question: "Why is hematogenous osteomyelitis less likely to spread to the joint space in children (aged 1-16) compared to infants?",
                 options: {
-                    A: "The first 4 weeks of disease",
-                    B: "The first 6 months of disease",
-                    C: "The first year of disease",
-                    D: "The first 2 years of disease",
-                    E: "Any time during the disease course"
+                    A: "The capillaries in the metaphysis are continuous rather than fenestrated",
+                    B: "The joint capsule always inserts below the physis",
+                    C: "The physis (growth plate) acts as a barrier to the spread of infection",
+                    D: "The blood supply to the epiphysis is completely cut off",
+                    E: "Children have thicker articular cartilage"
+                },
+                correctAnswer: "C",
+                rationale: "In children and adults, the blood vessels do not cross the physis. The physis acts as a barrier, preventing the spread of infection from the metaphysis to the epiphysis and joint space. Joint involvement is rare unless the capsule inserts below the metaphysis (e.g., hip, shoulder).",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 10: \"Acute osteomyelitis (children & adults)... joint involvement rare (capsule outside epiphysis).\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO2: Summarize the pathogenesis of [bone infection] in infants, older children, adults. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO2: Summarize the pathogenesis of osteomyelitis in infants, older children, adults. (Osteomyelitis & Infectious Arthritis)",
+                question: "In the pathogenesis of hematogenous osteomyelitis in children, bacteria tend to lodge in the metaphysis of long bones. Which anatomical characteristic of the metaphyseal vessels predisposes to this localization?",
+                options: {
+                    A: "High velocity blood flow",
+                    B: "Sluggish blood flow and discontinuous endothelium",
+                    C: "Lack of fenestrations",
+                    D: "Presence of numerous phagocytic lining cells",
+                    E: "Absence of a nutrient artery"
                 },
                 correctAnswer: "B",
-                rationale: "The subtype of JIA (e.g., Oligoarticular vs Polyarticular) is defined by the extent and pattern of joint involvement in the first 6 months of the disease.",
-                source: "Select Topics in Pediatric Rheumatology, Slide 7: \"Subtype is defined by the extent & pattern of joint involvement in the first 6 months of disease.\""
+                rationale: "The anatomy of growing bone in the metaphysis includes sluggish blood flow and discontinuous endothelium, which provides a foothold for microbes.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 5 & 9: \"rich blood supply (sluggish flow)... discontinuous endothelium... foothold for microbes.\""
             },
             {
-                section: "Selected Topics in Pediatric Rheumatology",
-                maskedLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
-                fullLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
-                question: "A 3-year-old girl presents with a limp and swelling of the left knee. She has no systemic symptoms. Laboratory testing is positive for ANA. She is diagnosed with Oligoarticular JIA. Because of her diagnosis and ANA status, she is at highest risk for which complication?",
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO3: Outline the management of [bone infection] (acute vs chronic; children vs adults). (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO3: Outline the management of osteomyelitis (acute vs chronic; children vs adults). (Osteomyelitis & Infectious Arthritis)",
+                question: "A child is diagnosed with acute osteomyelitis. The treatment plan involves an initial course of IV antibiotics followed by oral antibiotics. When is it considered appropriate to switch from IV to oral antibiotics in a child?",
                 options: {
-                    A: "Macrophage Activation Syndrome",
-                    B: "Chronic anterior uveitis",
-                    C: "Renal failure",
-                    D: "Pericarditis",
-                    E: "Interstitial lung disease"
+                    A: "Immediately after diagnosis",
+                    B: "After 6 weeks of IV therapy",
+                    C: "After fever and pain resolve",
+                    D: "Only if the CRP is completely normal",
+                    E: "Oral antibiotics are never used in children for osteomyelitis"
+                },
+                correctAnswer: "C",
+                rationale: "In children with acute osteomyelitis, the treatment protocol typically involves hospitalization at the start of therapy, followed by oral antibiotics after fever and pain resolve, for a total of at least 3 weeks.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 19: \"Acute osteomyelitis in children (Rx)... oral antibiotics after fever & pain resolve (at least 3 wks).\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO3: Outline the management of [bone infection] (acute vs chronic; children vs adults). (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO3: Outline the management of osteomyelitis (acute vs chronic; children vs adults). (Osteomyelitis & Infectious Arthritis)",
+                question: "For a patient with chronic osteomyelitis related to a diabetic foot infection, what is considered a critical component of management in addition to antibiotic therapy?",
+                options: {
+                    A: "Hyperbaric oxygen therapy as the primary treatment",
+                    B: "Surgical debridement",
+                    C: "Long-term suppressive antibiotics alone",
+                    D: "Immediate amputation in all cases",
+                    E: "Topical antibiotics only"
                 },
                 correctAnswer: "B",
-                rationale: "Oligoarticular JIA patients, particularly those who are ANA positive and young (<7 years), are at the highest risk for chronic anterior uveitis. It is typically asymptomatic, so frequent screening with a slit-lamp exam is required.",
-                source: "Select Topics in Pediatric Rheumatology, Slide 12: \"JIA-associated uveitis... Highest risk: Oligoarticular JIA, ANA+, Age of onset < 7.\""
+                rationale: "For chronic osteomyelitis, including diabetic foot infections and infections with hardware, surgical debridement is a key component of therapy, often followed by antibiotics.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 38: \"Osteomyelitis (IV vs oral antibiotics)... diabetic foot infections... surgical debridement****.\""
             },
             {
-                section: "Selected Topics in Pediatric Rheumatology",
-                maskedLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
-                fullLO: "LO2: Describe the demographic and clinical characteristics of the most common subgroup of juvenile idiopathic arthritis (JIA): oligoarticular JIA. (Select Topics in Pediatric Rheumatology)",
-                question: "Which of the following clinical features is most characteristic of Oligoarticular JIA?",
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO3: Outline the management of [bone infection] (acute vs chronic; children vs adults). (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO3: Outline the management of osteomyelitis (acute vs chronic; children vs adults). (Osteomyelitis & Infectious Arthritis)",
+                question: "A patient with vertebral osteomyelitis has a blood culture positive for MSSA. The plan includes IV antibiotics followed by oral antibiotics. What is the typical total duration of antibiotic therapy for vertebral osteomyelitis?",
                 options: {
-                    A: "Involvement of >4 joints in the first 6 months",
-                    B: "Symmetric involvement of small joints of the hands",
-                    C: "Peak age of onset in adolescence",
-                    D: "Asymmetric involvement of large joints like the knee",
-                    E: "Frequent fevers and rash"
+                    A: "2 weeks",
+                    B: "4 weeks",
+                    C: "6 weeks",
+                    D: "3 months",
+                    E: "6 months"
                 },
-                correctAnswer: "D",
-                rationale: "Oligoarticular JIA affects ≤4 joints in the first 6 months. It typically affects large joints like the knees and ankles in an asymmetric pattern. It is the most common subtype and has a peak onset in toddlers (1-4 years).",
-                source: "Select Topics in Pediatric Rheumatology, Slide 9: \"≤ 4 joints in first 6 months, asymmetric... Knee is most commonly affected joint.\""
+                correctAnswer: "C",
+                rationale: "For vertebral osteomyelitis, the treatment duration is typically 6 weeks, often transitioning from IV to oral therapy.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 25: \"Vertebral osteomyelitis (empirical Rx)... adjust after culture results (6 wks Rx: IV -> oral).\""
             },
             {
-                section: "Selected Topics in Pediatric Rheumatology",
-                maskedLO: "LO3: Compare and contrast [condition A] with [condition B]. (Select Topics in Pediatric Rheumatology)",
-                fullLO: "LO3: Compare and contrast systemic juvenile idiopathic arthritis with macrophage activation syndrome. (Select Topics in Pediatric Rheumatology)",
-                question: "A 5-year-old boy presents with daily spiking fevers, an evanescent salmon-colored rash, and hepatosplenomegaly. Laboratory results show elevated ferritin, leukocytosis, and thrombocytosis. What is the most likely diagnosis?",
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO4: Describe acute infectious arthritis in terms of its epidemiology & microbiology. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO4: Describe acute infectious arthritis in terms of its epidemiology & microbiology. (Osteomyelitis & Infectious Arthritis)",
+                question: "A 22-year-old sexually active male presents with a swollen, painful knee and a pustular rash on his hands. Joint aspiration is performed. Which organism is the most common cause of septic arthritis in sexually active young adults?",
                 options: {
-                    A: "Oligoarticular JIA",
-                    B: "Systemic JIA",
-                    C: "Kawasaki Disease",
-                    D: "Lyme Disease",
-                    E: "Septic Arthritis"
-                },
-                correctAnswer: "B",
-                rationale: "Systemic JIA is characterized by quotidian (daily spiking) fevers, evanescent salmon-colored rash, serositis, and organomegaly. Laboratory findings typically include elevated inflammatory markers (ESR, CRP, Ferritin), leukocytosis, and thrombocytosis.",
-                source: "Select Topics in Pediatric Rheumatology, Slide 15: \"Systemic JIA: Presentation... Quotidian fever... evanescent salmon-colored rash... hepatosplenomegaly... Leukocytosis, Thrombocytosis.\""
-            },
-            {
-                section: "Selected Topics in Pediatric Rheumatology",
-                maskedLO: "LO3: Compare and contrast [condition A] with [condition B]. (Select Topics in Pediatric Rheumatology)",
-                fullLO: "LO3: Compare and contrast systemic juvenile idiopathic arthritis with macrophage activation syndrome. (Select Topics in Pediatric Rheumatology)",
-                question: "A patient with known Systemic JIA suddenly becomes ill-appearing with persistent high fevers. Laboratory studies reveal pancytopenia (low WBC, low platelets), elevated liver enzymes, and an extremely high ferritin level. Fibrinogen is low. This presentation suggests the development of:",
-                options: {
-                    A: "Lupus Nephritis",
-                    B: "Macrophage Activation Syndrome (MAS)",
-                    C: "Bacterial Sepsis",
-                    D: "Disease flare of Systemic JIA",
-                    E: "Drug reaction"
+                    A: "Staphylococcus aureus",
+                    B: "Neisseria gonorrhoeae",
+                    C: "Streptococcus pneumoniae",
+                    D: "Escherichia coli",
+                    E: "Kingella kingae"
                 },
                 correctAnswer: "B",
-                rationale: "MAS is a life-threatening complication of Systemic JIA. It is distinguished from active Systemic JIA by low blood counts (pancytopenia), low fibrinogen (consumption), and extremely high ferritin. In contrast, active Systemic JIA typically has high WBC, high platelets, and high fibrinogen.",
-                source: "Select Topics in Pediatric Rheumatology, Slide 29: \"Systemic JIA versus MAS... [MAS has] Low WBC, Low Platelets, Low Fibrinogen... VERY VERY High Ferritin.\""
+                rationale: "While S. aureus is common overall (approx 50%), Neisseria gonorrhoeae is the most common cause in sexually active adults and can present with disseminated gonococcal infection (arthritis-dermatitis syndrome).",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 42 & 46: \"most common in sexually active adults... disseminated gonococcal infection (arthritis-dermatitis syndrome).\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO4: Describe acute infectious arthritis in terms of its epidemiology & microbiology. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO4: Describe acute infectious arthritis in terms of its epidemiology & microbiology. (Osteomyelitis & Infectious Arthritis)",
+                question: "A 2-year-old child presents with a refusal to walk and fever. Septic arthritis is suspected. Which organism is the #1 cause of osteoarticular infections in children aged 6-48 months, especially those in day-care?",
+                options: {
+                    A: "Staphylococcus aureus",
+                    B: "Haemophilus influenzae",
+                    C: "Kingella kingae",
+                    D: "Streptococcus agalactiae",
+                    E: "Salmonella"
+                },
+                correctAnswer: "C",
+                rationale: "Kingella kingae is the #1 cause of osteoarticular infections in children aged 6-48 months. It is normal oropharyngeal flora and incidence increases with day-care attendance.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 14: \"Kingella kingae... #1 cause of osteoarticular infections in kids age 6-48 mos.\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO4: Describe acute infectious arthritis in terms of its epidemiology & microbiology. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO4: Describe acute infectious arthritis in terms of its epidemiology & microbiology. (Osteomyelitis & Infectious Arthritis)",
+                question: "In the diagnosis of septic arthritis, synovial fluid analysis is critical. Which set of synovial fluid findings is most consistent with a diagnosis of infectious arthritis?",
+                options: {
+                    A: "WBC < 200, Glucose = serum, Protein 1/3 serum",
+                    B: "WBC 2,000-10,000, Glucose normal, Protein normal",
+                    C: "WBC > 50,000, Glucose < serum, Protein > 1/3 serum",
+                    D: "WBC > 50,000, Glucose > serum, Protein < 1/3 serum",
+                    E: "WBC < 2,000, hemorrhagic fluid"
+                },
+                correctAnswer: "C",
+                rationale: "Infectious arthritis is characterized by purulent fluid. While the slide doesn't explicitly state \">50,000\", it indicates arrows showing increased protein and decreased glucose compared to normal. Standard medical knowledge aligns septic arthritis with high WBC, low glucose, and high protein. The slide visually contrasts normal (clear) vs infected (purulent/opaque) fluid.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 47: \"Infectious arthritis (joint fluid analysis)... [Up Arrow] protein; [Down Arrow] glucose.\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO5: Describe [condition] with respect to pathogenesis, evaluation, and management. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO5: Describe Lyme disease with respect to pathogenesis, evaluation, and management. (Osteomyelitis & Infectious Arthritis)",
+                question: "A 45-year-old man presents with a large, homogeneously erythematous, slightly raised, itchy plaque on his back that appeared one week after a hiking trip. He has no systemic symptoms. Which of the following is the most appropriate initial step in management?",
+                options: {
+                    A: "Perform ELISA testing for Lyme IgM and IgG",
+                    B: "Perform a skin biopsy",
+                    C: "Start empiric treatment with doxycycline",
+                    D: "Observe and repeat serology in 2 weeks",
+                    E: "Start empiric treatment with ceftriaxone"
+                },
+                correctAnswer: "C",
+                rationale: "In early localized Lyme disease with an obvious erythema migrans (EM) rash, serology is often negative (low sensitivity in early disease). The appropriate management is to treat empirically (e.g., doxycycline or amoxicillin for 10 days) based on the clinical presentation without waiting for serology.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 62: \"Early localized Lyme disease (diagnosis)... [Image of EM]... + serology [Crossed Out]... amoxicillin or doxycycline (10d).\" Also Slide 67: \"misuses of serology... obvious early localized EM.\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO5: Describe [condition] with respect to pathogenesis, evaluation, and management. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO5: Describe Lyme disease with respect to pathogenesis, evaluation, and management. (Osteomyelitis & Infectious Arthritis)",
+                question: "A patient with untreated Lyme disease presents with facial palsy. This clinical finding is most characteristic of which stage of Lyme disease?",
+                options: {
+                    A: "Early localized",
+                    B: "Early disseminated",
+                    C: "Late disseminated",
+                    D: "Post-treatment Lyme disease syndrome",
+                    E: "Chronic Lyme"
+                },
+                correctAnswer: "B",
+                rationale: "Early disseminated Lyme disease manifestations include multiple EM lesions, cranial nerve palsies (CN VII most common/facial palsy), meningitis, and carditis.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 63: \"Early disseminated... VII most common.\""
+            },
+            {
+                section: "Infectious Arthritis & Osteomyelitis",
+                maskedLO: "LO5: Describe [condition] with respect to pathogenesis, evaluation, and management. (Osteomyelitis & Infectious Arthritis)",
+                fullLO: "LO5: Describe Lyme disease with respect to pathogenesis, evaluation, and management. (Osteomyelitis & Infectious Arthritis)",
+                question: "A patient presents with abrupt onset of swelling in the knee joint. The patient recalls a \"bullseye rash\" several months ago that was not treated. If this is late disseminated Lyme arthritis, which treatment regimen is recommended?",
+                options: {
+                    A: "Oral doxycycline for 10 days",
+                    B: "Oral amoxicillin for 28 days",
+                    C: "IV vancomycin for 6 weeks",
+                    D: "Intra-articular steroid injection",
+                    E: "Topical antibiotics"
+                },
+                correctAnswer: "B",
+                rationale: "Late disseminated Lyme disease, which can present as arthritis (abrupt onset of swollen joint), is treated with oral antibiotics (amoxicillin or doxycycline) or IV ceftriaxone for 28 days.",
+                source: "Osteomyelitis & Infectious Arthritis, Slide 66: \"Late disseminated Lyme disease... amoxicillin or doxycycline or ceftriaxone (28d).\""
             }
         ];
 
